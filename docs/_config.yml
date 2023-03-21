@@ -1,7 +1,7 @@
 # Site wide configuration
-title: Trio
+title: Philip Van de Vyver - Azure Blog
 description: 'A simple content-focused Jekyll theme'
-url: http://www.perfectlyrandom.org/trio
+url: https://blog.2forward.eu
 date_format: '%B %d, %Y'
 fort_awesome_icon: 'cog fa-spin'
 
@@ -9,10 +9,10 @@ fort_awesome_icon: 'cog fa-spin'
 # name and email are required (change code to remove these)
 # (leave the rest blank to disable the corresponding sharing button)
 owner:
-    name: Ankur Gupta
+    name: Philip Van de Vyver
     email: ankur@perfectlyrandom.org
-    github: ankur-gupta
-    twitter: ankurIO
+    github: pvyver
+    twitter: pvyver
     linkedin: ankurguptawisc
     facebook:
     google_plus:
