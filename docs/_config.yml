@@ -1,56 +1,57 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+# Site wide configuration
+title: Trio
+description: 'A simple content-focused Jekyll theme'
+url: http://www.perfectlyrandom.org/trio
+date_format: '%B %d, %Y'
+fort_awesome_icon: 'cog fa-spin'
 
-title: Philip Van de Vyver - Azure Blog
-email: info@2forward.be
-description: >- # this means to ignore newlines until "baseurl:"
-  Welcome to my blog, a source of best practices, usecases, tips & tricks on everything that relates 
-  to Microsoft Azure.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: pvyver
-github_username:  pvyver
+# Owner configuration
+# name and email are required (change code to remove these)
+# (leave the rest blank to disable the corresponding sharing button)
+owner:
+    name: Ankur Gupta
+    email: ankur@perfectlyrandom.org
+    github: ankur-gupta
+    twitter: ankurIO
+    linkedin: ankurguptawisc
+    facebook:
+    google_plus:
+    youtube:
 
-# Build settings
-theme: minima
-#remote_theme: pages-themes/modernist@v0.2.0
-plugins:
-#- jekyll-remote-theme # add this line to the plugins list if you already have one
-- jekyll-feed
+# Post sharing icons
+sharing:
+    twitter: true
+    linkedin: true
+    facebook: true
+    google_plus: true
+    reddit: true
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# Disqus comments configuration (leave blank to disable comments)
+disqus_shortname: 'perfectlyrandom-trio'
+
+# Jekyll configuration
+permalink: /:year/:month/:day/:title/
+paginate: 25
+
+# Markdown
+markdown: redcarpet
+highlighter: rouge
+
+# Enable when using redcarpet
+redcarpet:
+  extensions: ['smart', 'tables', 'with_toc_data', 'footnotes']
+
+# Enable when using kramdown (you will need to use ~~~ instead of ```)
+# kramdown:
+#   auto_ids: true
+#   footnote_nr: 1
+#   entity_output: as_char
+#   toc_levels: 1..6
+#   use_coderay: false
+
+# Gems
+gems: ['jekyll-paginate']
+
+# Exclude
+exclude: ['README.md']
+
