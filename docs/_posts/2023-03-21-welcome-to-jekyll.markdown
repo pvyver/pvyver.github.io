@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll"
+title: Welcome to Jekyll
 date: 2023-03-21
 logo: 'spinner fa-spin'
 ---
