@@ -1,6 +1,6 @@
 # Site wide configuration
 title: Philip Van de Vyver - Azure Blog
-description: 'A simple content-focused Jekyll theme'
+description: 'A blog with a focus on Microsoft Azure'
 url: https://blog.2forward.eu
 date_format: '%B %d, %Y'
 fort_awesome_icon: 'cog fa-spin'
@@ -31,7 +31,7 @@ disqus_shortname: 'philipvandevyver'
 
 # Jekyll configuration
 permalink: /:year/:month/:day/:title/
-paginate: 25
+paginate: 10
 
 # Markdown
 markdown: redcarpet
