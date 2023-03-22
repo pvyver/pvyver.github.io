@@ -10,10 +10,10 @@ fort_awesome_icon: 'cog fa-spin'
 # (leave the rest blank to disable the corresponding sharing button)
 owner:
     name: Philip Van de Vyver
-    email: ankur@perfectlyrandom.org
+    email: philip.vandevyver@2forward.be
     github: pvyver
     twitter: pvyver
-    linkedin: ankurguptawisc
+    linkedin: philipvandevyver
     facebook:
     google_plus:
     youtube:
@@ -27,7 +27,7 @@ sharing:
     reddit: true
 
 # Disqus comments configuration (leave blank to disable comments)
-disqus_shortname: 'perfectlyrandom-trio'
+disqus_shortname: 'philipvandevyver'
 
 # Jekyll configuration
 permalink: /:year/:month/:day/:title/
