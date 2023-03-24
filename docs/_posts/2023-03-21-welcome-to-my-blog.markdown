@@ -3,6 +3,7 @@ layout: post
 title: Welcome to my blog
 date:   2023-03-21 
 logo: 'fa fa-rocket'
+comments: true
 ---
 
 Hi welcome to my blog.
