@@ -2,7 +2,7 @@
 layout: post
 title: Assigning Azure Active Directory Roles for users and service principals using Python, az rest and Graph API 
 date:   2023-03-21 
-logo: 'fa fa-rocket'
+logo: 'fa fa-code'
 comments: true
 ---
  
