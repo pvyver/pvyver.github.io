@@ -6,7 +6,7 @@ logo: 'fa fa-code'
 comments: true
 ---
  
-I recently got the question on how to assign Azure AD roles to Azure AD `users` and `app registration (service principal (SPN))` using the [Azure AD Graph API] with the [az cli] [az rest] command.
+I recently got the question on how to assign Azure AD roles to Azure AD `users` and `app registration (service principal (SPN))` using the [Azure AD Graph API] with the [az cli] & [az rest] command.
 
 [Azure AD Graph API]:https://learn.microsoft.com/en-us/graph/use-the-api
 
