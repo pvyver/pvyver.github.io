@@ -57,6 +57,7 @@ A copy of the Python code can be found on my Github page over here: [AADRoleAssi
 Here's an example Python script to assign the `Global Administrator`  role to an `App Registration (Service Principal (SPN))`:
 
 *(replace the **'valid-app-object-id'** with the objectId of the App registration)*
+>It's the object id of the service principal you need, not the application. You can find the service principal under Enterprise Applications in Azure portal's Azure AD blade. In its Properties you'll find the object id.
 
 ``` python
 # coding: utf-8
