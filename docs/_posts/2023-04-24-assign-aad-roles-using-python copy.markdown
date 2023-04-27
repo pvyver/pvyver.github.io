@@ -19,8 +19,6 @@ Here's an example Python script to assign the `Global Administrator`  role to a 
 *(replace the **'valid-user-principal-object-id'** with the objectId of the user object)*
 
 ``` python
-# coding: utf-8
-
 import subprocess
 import re
 
@@ -29,11 +27,13 @@ ansi_escape = re.compile(r'\x1B\[[0-?]*[ -/]*[@-~]')
 def callTheAPI():
   URI="https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments"
 
-  BODY={
-    "principalId": "valid-user-principal-object-id",
-    "roleDefinitionId": "62e90394-69f5-4237-9190-012177145e10",
-    "directoryScopeId": "/"
-  }
+  USER_PRINCIPAL_OBJECT_ID="66bb642f-3dae-4619-b584-1c91ade9aede"
+  DIRECTORY_ROLE_TEMPLATE_ID="62e90394-69f5-4237-9190-012177145e10"
+
+  BODY={}
+  BODY['principalId']=USER_PRINCIPAL_OBJECT_ID
+  BODY['roleDefinitionId']=DIRECTORY_ROLE_TEMPLATE_ID
+  BODY['directoryScopeId']="/"
 
   assignGlobalAdminCommand='az rest --method POST --uri '+URI+' --header Content-Type=application/json --body "'+str(BODY)+'"'
 
@@ -60,8 +60,6 @@ Here's an example Python script to assign the `Global Administrator`  role to an
 >It's the object id of the service principal you need, not the application. You can find the service principal under Enterprise Applications in Azure portal's Azure AD blade. In its Properties you'll find the object id.
 
 ``` python
-# coding: utf-8
-
 import subprocess
 import re
 
@@ -69,9 +67,14 @@ ansi_escape = re.compile(r'\x1B\[[0-?]*[ -/]*[@-~]')
 
 def callTheAPI():
 
-  URI="https://graph.microsoft.com/v1.0/directoryRoles/roleTemplateId=62e90394-69f5-4237-9190-012177145e10/members/$ref" 
+  SERVICE_PRINCIPAL_OBJECT_ID="valid-service-principal-object-id"
 
-  BODY=  {"@odata.id": "https://graph.microsoft.com/v1.0/directoryObjects/valid-app-object-id"}
+  DIRECTORY_ROLE_TEMPLATE_ID="62e90394-69f5-4237-9190-012177145e10" # Global Admin Role Template Id
+
+  URI='https://graph.microsoft.com/v1.0/directoryRoles/roleTemplateId='+DIRECTORY_ROLE_TEMPLATE_ID+'/members/$ref' 
+
+  BODY={}
+  BODY['@odata.id']='https://graph.microsoft.com/v1.0/directoryObjects/'+SERVICE_PRINCIPAL_OBJECT_ID
 
   assignGlobalAdminCommand='az rest --method POST --uri '+URI+' --header Content-Type=application/json --body "'+str(BODY)+'"'
 
