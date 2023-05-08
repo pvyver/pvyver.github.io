@@ -47,38 +47,39 @@ auth method - instructions for which can be found here: https://www.terraform.io
 
 ## To enable Terraform to use `OpenID Connect (OIDC)`
 
-1) Add the `use_oidc = true` section to the backend ttings as exmplated in the [azurerm] documentation
+### Add the `use_oidc = true` section to the backend ttings as exmplated in the [azurerm] documentation
 
-    [azurerm]:https://developer.hashicorp.com/terraform/language/settings/backends/azurerm 
+[azurerm]:https://developer.hashicorp.com/terraform/language/settings/backends/azurerm 
 
-    Example `azure.tf`:
+Example `azure.tf`:
 
-    ``` json
-    terraform {
-      required_providers {
-        azurerm = {
-          source = "hashicorp/azurerm"
-          version = "3.30.0"
-        }
-      }
+``` json
+terraform {
+  required_providers {
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = "3.30.0"
     }
+  }
+}
 
-    provider "azurerm" {
-      use_oidc = true
-      features {}
-    }
-    ```
-2) Declare the environment variables in the `GitHub workflow`:
+provider "azurerm" {
+  use_oidc = true
+  features {}
+}
+```
 
-    ``` yaml
-    env:
-      ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-      ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-      ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-    ```
+### Declare the environment variables in the `GitHub workflow`:
+
+``` yaml
+env:
+  ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+  ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+  ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+```
 
 
 
-You can find a working example on my GitHub [TFdeploy] repo
+> You can find a working example on my GitHub [TFdeploy] repo
 
 [TFdeploy]:https://github.com/pvyver/TFdeploy
