@@ -6,6 +6,8 @@ logo: 'github'
 comments: true
 ---
  
+![alt text](../_images/2023-05-08-github-terraform-actions-deployment_github-actions.png "image Title")
+
 ## Introduction
 Github uses a nice feature called `OpenID Connect (OIDC)` for Federated Authentication.
 
