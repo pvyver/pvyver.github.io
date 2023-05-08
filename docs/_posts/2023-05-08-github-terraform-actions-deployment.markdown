@@ -26,6 +26,7 @@ Authentication is then done with the [azure/login@v1] action.
 
 [azure/login@v1]:https://github.com/Azure/login
 
+<!-- {% raw %} -->
 ``` yaml
     - name: 'Az CLI login'
       uses: azure/login@v1
@@ -34,6 +35,7 @@ Authentication is then done with the [azure/login@v1] action.
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 ```
+<!-- {% endraw %} -->
 
 ## Possible Terraform issue
 This is working fine for direct deployments with ARM or Bicep templates, however, when using the 
@@ -71,14 +73,14 @@ provider "azurerm" {
 
 ### Declare the environment variables in the `GitHub workflow`:
 
+<!-- {% raw %} -->
 ``` yaml
 env:
   ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
   ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
   ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
 ```
-
-
+<!-- {% endraw %} -->
 
 > You can find a working example on my GitHub [TFdeploy] repo
 
