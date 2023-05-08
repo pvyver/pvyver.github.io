@@ -55,7 +55,7 @@ auth method - instructions for which can be found here: https://www.terraform.io
 
 Example `azure.tf`:
 
-``` json
+``` tf
 terraform {
   required_providers {
     azurerm = {
