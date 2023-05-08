@@ -2,7 +2,7 @@
 layout: post
 title: Deploying Terraform using Github Actions with OpenID Connect (OIDC)
 date:   2023-05-08 
-logo: 'fa fa-code'
+logo: 'github'
 comments: true
 ---
  
