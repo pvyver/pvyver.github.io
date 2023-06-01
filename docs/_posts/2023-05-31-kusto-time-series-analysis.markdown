@@ -6,6 +6,8 @@ logo: 'calculator'
 comments: true
 ---
 
+![make-series timechart](/_images/2023-05-31-kusto-time-series-analysis-series-decompose-forecast.png)
+
 ## Introduction
 
 `Azure Monitor Logs` is based on `Azure Data Explorer`, and log queries are written by using the same [Kusto] Query Language (KQL). This rich language is designed to be easy to read and author, so you should be able to start writing queries with some basic guidance.
