@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Kusto Time Series Analysis for AzureMetrics (Forecast, Anomalies)'
+title: 'Kusto Time Series Analysis for Azure Resources (Forecast, Anomalies)'
 date:   2023-05-31 
 logo: 'calculator'
 comments: true
