@@ -1,35 +1,36 @@
 ---
 layout: post
-title: 'OpenAI alert enrichment'
+title: 'Correlate Logs in Log Analytics with Azure Resource Graph (Tag) data'
 date:   2023-03-21 
-logo: 'fa fa-rocket'
+logo: 'list'
 ---
 
-Hi welcome to my blog.
+## Introduction
 
-After some LinkedIn post, I've decided to create a blog for myself.
+`Logs` in a `Log Analytics Workspace` are powerful for alerting, debugging and visualization purposes. 
 
-I created the blog using `Jekyll`. 
-[Jekyll](http://jekyllrb.com/) is a system to create blog-aware, [static](https://en.wikipedia.org/wiki/Static_web_page) web pages. Jekyll integrates nicely with [GitHub Pages](https://pages.github.com/). And Jekyll supports markdown.
+While working with these logs, I regulary faced the issue that they (at the time of writing) cannot be correlated with information coming from `Azure Resource Graph` resource tables.
+This could be helpful for alerting, chargeback on logs using tags, ...
 
-Enjoy reading the posts!
+To workaround the issue, I decided to fetch the `Azure Resource Graph` data from resources and ingest them into a Log Analytics Workspace.
 
-jekyll code block markdown
+## Prerequisites
 
-{% highlight powershell %}
-$apiKey = "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"
-$url = "https://api.openai.com/v1/engines/davinci-codex/completions"
+- Log Analytics Workspace
+- Automation Account
+- User Assigned Managed Identity
+    - Reader Permissions on the Subscription(s)
+    - Metrics Contributor
 
-$body = @{
-    prompt = "Write a PowerShell script to"
-    max_tokens = 50
-} | ConvertTo-Json
+## Approach
 
-$headers = @{
-    "Content-Type" = "application/json"
-    "Authorization" = "Bearer $apiKey"
-}
+- Data Collection Endpoint (DCE)
+- Data Collection Rule (DCR)
+- Azure Automation Runbook 
+    - Schedule
+- Consume Log Analutics Workspace data
+    - Query Logs
+    - Create alert
+    - Create Workbook
 
-$response = Invoke-RestMethod -Uri $url -Method POST -Headers $headers -Body $body
-$response.choices.text
-{% endhighlight %}
+
