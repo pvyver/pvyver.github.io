@@ -39,7 +39,7 @@ The `Azure platform metrics` performance data is stored in the [AzureMetrics] ta
 A regular query to display a `timechart` for the  Average `CurrentConnections` for an Application Gateway could be:
 
 #### Example Query
-``` kql
+``` apache
 AzureMetrics
 | where ResourceId =~ "**your Application Gateway resource id**" 
 | where MetricName =~ "CurrentConnections"
@@ -70,7 +70,7 @@ In this example the `average CurrentConnections` are calculated on the Timestamp
 
 #### Example Query
 
-``` kql
+``` apache 
 AzureMetrics
 | where ResourceId =~ "**your Application Gateway resource id**" 
 | where MetricName =~ "CurrentConnections"
@@ -96,7 +96,7 @@ The result shows a set of time series, the `average` of the `CurrentConnections`
 
 You can add the render operator to viualize the results in a timechart:
 
-``` kql
+``` apache
 AzureMetrics
 | where ResourceId =~ "**your Application Gateway resource id**" 
 | where MetricName =~ "CurrentConnections"
@@ -139,7 +139,7 @@ The Forecast is added with the [series_decompose_forecast()] function based on t
 The number of points are calculated from the `number of days` în the forecast `devided` by the `interval`: **'horizon / dt'**
 
 
-``` kql
+``` apache
 let min_t = ago(30d);
 let max_t = now(-1d);
 let dt = 1h;
@@ -179,7 +179,7 @@ Similar to the [series_decompose_forecast()] the function [series_decompose_anom
 
 #### Example Query
 
-``` kql
+``` apache
 let min_t = ago(30d);
 let max_t = now(-1d);
 let dt = 1h;
@@ -216,7 +216,7 @@ You can fix the scaling of the `Anomalies` timeline by taking a [toscalar()] of 
 
 [series_multiply()]:https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/series-multiplyfunction
 
-``` kql
+``` apache
 let grain = 1h;
 let metric_scale = toscalar(
     AzureMetrics
