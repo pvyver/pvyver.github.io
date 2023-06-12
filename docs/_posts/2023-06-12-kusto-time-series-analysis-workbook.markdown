@@ -2,7 +2,7 @@
 layout: post
 title: 'Kusto Time Series Analysis for Azure Resources - Workbook'
 date:   2023-06-12 
-logo: 'fa fa-chart-line'
+logo: 'fa-chart-line'
 comments: true
 ---
 
@@ -28,7 +28,7 @@ For your convenience, I've created an example workbook.
 
 ### Parameters
 
-![Parameters](../_images/2023-06-12-kusto-time-series-analysis-workbook-parameters.png)
+![Parameters](/_images/2023-06-12-kusto-time-series-analysis-workbook-parameters.png)
 
 `Timerange`: The TimeRange  
 
@@ -51,7 +51,7 @@ This is done using the [series_decompose_forecast()] function.
 
 [series_decompose_forecast()]:https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/series-decompose-forecastfunction
 
-![Forecast](../_images/2023-06-12-kusto-time-series-analysis-workbook-forecast.png)
+![Forecast](/_images/2023-06-12-kusto-time-series-analysis-workbook-forecast.png)
 
 ### Trendline 
 
@@ -59,7 +59,7 @@ This is done using the [series_fit_line()] function.
 
 [series_fit_line()]:https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/series-fit-linefunction
 
-![Trendline](../_images/2023-06-12-kusto-time-series-analysis-workbook-trendline.png)
+![Trendline](/_images/2023-06-12-kusto-time-series-analysis-workbook-trendline.png)
 
 ### Anomalies
 
@@ -71,7 +71,7 @@ I also added a table that extracts the `outliers` for the anomalies using the [m
 
 [mv-expand]:https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/mvexpandoperator
 
-![Anomalies](../_images/2023-06-12-kusto-time-series-analysis-workbook-anomalies.png)
+![Anomalies](/_images/2023-06-12-kusto-time-series-analysis-workbook-anomalies.png)
 
 ## Download
 
