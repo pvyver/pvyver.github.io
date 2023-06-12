@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'Kusto Time Series Analysis for Azure Resources - Workbook'
-date:   2023-05-31 
-logo: 'chart-simple'
+date:   2023-06-12 
+logo: 'fa fa-chart-line'
 comments: true
 ---
 
