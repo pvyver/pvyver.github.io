@@ -2,11 +2,11 @@
 layout: post
 title: 'Kusto Time Series Analysis for Azure Resources - Workbook'
 date:   2023-05-31 
-logo: 'chart-line'
+logo: 'chart-simple'
 comments: true
 ---
 
-# Introduction
+## Introduction
 
 As explained in previous [blog post], you can use the [Kusto] Query Language (KQL) for [Anomaly detection and forecasting]. 
 
@@ -24,9 +24,9 @@ This is great for ad-hoc querying the logs, and visualizing the data with the [m
 
 For your convenience, I've created an example workbook.
 
-# Workbook
+## Workbook
 
-## Parameters
+### Parameters
 
 ![Parameters](../_images/2023-06-12-kusto-time-series-analysis-workbook-parameters.png)
 
@@ -45,7 +45,7 @@ For your convenience, I've created an example workbook.
 `Aggregation`: The type of aggregation (Avg, Min, Max, Pct5, Pct10, Pct50, Pct90, Pct95)
 
 
-## Forecast 
+### Forecast 
 
 This is done using the [series_decompose_forecast()] function.
 
@@ -53,7 +53,7 @@ This is done using the [series_decompose_forecast()] function.
 
 ![Forecast](../_images/2023-06-12-kusto-time-series-analysis-workbook-forecast.png)
 
-## Trendline 
+### Trendline 
 
 This is done using the [series_fit_line()] function.
 
@@ -61,7 +61,7 @@ This is done using the [series_fit_line()] function.
 
 ![Trendline](../_images/2023-06-12-kusto-time-series-analysis-workbook-trendline.png)
 
-## Anomalies
+### Anomalies
 
 This is done using the [series_decompose_anomalies()] function.
 
@@ -73,7 +73,7 @@ I also added a table that extracts the `outliers` for the anomalies using the [m
 
 ![Anomalies](../_images/2023-06-12-kusto-time-series-analysis-workbook-anomalies.png)
 
-# Download
+## Download
 
 Here's the [ARM Template]   the [Gallery Template].
 
