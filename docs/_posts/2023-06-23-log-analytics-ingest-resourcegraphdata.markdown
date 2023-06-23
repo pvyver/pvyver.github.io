@@ -2,7 +2,7 @@
 layout: post
 title: 'Ingest Azure resource data into a Log Analytics Workspace Custom Table'
 date:   2023-06-23 
-logo: 'calculator'
+logo: 'table'
 comments: true
 ---
 
