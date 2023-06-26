@@ -482,4 +482,4 @@ You can now start to join the table data with other data in the platform log def
 
 You can find the templates, scripts and Logic App in my GitHub Repository over [HERE].
 
-[HERE]:https://github.com/pvyver/AzureResourceGraphLogAnalytics/tree/main/templates
+[HERE]:https://github.com/pvyver/AzureResourceGraphLogAnalytics/tree/main
