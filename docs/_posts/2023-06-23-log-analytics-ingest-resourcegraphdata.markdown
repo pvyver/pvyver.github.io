@@ -476,4 +476,10 @@ The Result looks like this:
 
   <img src="/_images/2023-06-23-log-analytics-ingest-resourcegraphdata-lawresult.png">
 
-You can nog start to join the table data with other data in the platform log default tables.
+You can now start to join the table data with other data in the platform log default tables.
+
+## Download
+
+You can find the templates, scripts and Logic App in my GitHub Repository over [HERE].
+
+[HERE]:https://github.com/pvyver/AzureResourceGraphLogAnalytics/tree/main/templates
