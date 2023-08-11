@@ -9,16 +9,16 @@ comments: true
 ### Table of contents
 
 - [Introduction](#introduction)
-  - [Azure REST API Authentication](#azure-rest-api-authentication)
-    - [JSON Web Token (JWT)](#json-web-token-jwt)
-    - [Authentication to the Management API](#authentication-to-the-management-api)
+	- [Azure REST API Authentication](#azure-rest-api-authentication)
+		- [JSON Web Token (JWT)](#json-web-token-jwt)
+		- [Authentication to the Management API](#authentication-to-the-management-api)
 - [Authentication with an App Registration](#authentication-with-an-app-registration)
-    - [Example](#example)
+		- [Example](#example)
 - [Authentication with current account](#authentication-with-current-account)
-  - [Using Get-AccessToken](#using-get-accesstoken)
-    - [Example](#example-1)
-  - [Using the token stored in the profile](#using-the-token-stored-in-the-profile)
-    - [Example](#example-2)
+	- [Using Get-AccessToken](#using-get-accesstoken)
+		- [Example](#example-1)
+	- [Using the token stored in the profile](#using-the-token-stored-in-the-profile)
+		- [Example](#example-2)
 
 
 ## Introduction
@@ -31,9 +31,13 @@ In this article, I want to explain the authentication options that you have with
 
 ### Azure REST API Authentication
 
-Authentication to the `Azure REST API` is done by using an [OAuth2] bearer token` 
+Authentication to the `Azure REST API` is done by using an [OAuth2] bearer token.
 
 [OAuth2]:https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
+
+With this token you can authenticate your request on the Azure REST API:
+
+<img src="/_images/2023-08-11-powershell-authentication-token-azure-rest-api-authication-flow.png" width="50">
 
 #### JSON Web Token (JWT)
 
