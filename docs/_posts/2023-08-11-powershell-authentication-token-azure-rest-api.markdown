@@ -37,7 +37,7 @@ Authentication to the `Azure REST API` is done by using an [OAuth2] bearer token
 
 With this token you can authenticate your request on the Azure REST API:
 
-<img src="/_images/2023-08-11-powershell-authentication-token-azure-rest-api-authication-flow.png" width="50">
+<img src="/_images/2023-08-11-powershell-authentication-token-azure-rest-api-authication-flow.png">
 
 #### JSON Web Token (JWT)
 
