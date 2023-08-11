@@ -73,7 +73,7 @@ For example, you might send an `HTTPS GET` request method for an `Azure Resource
 
 [list subscriptions]:https://learn.microsoft.com/en-us/rest/api/resources/subscriptions/list?tabs=HTTP
 
-``` PowerShell
+``` powershell
 $path = "/subscriptions"
 $apiVersion = "2022-12-01"
 $token = "<your-acquired-token>"
@@ -99,7 +99,7 @@ The access token can be aquired using an [access token request with a shared sec
 
 `Get-AppRegistrationAuthorizationToken` function:
 
-``` PowerShell
+``` powershell
 function Get-AppRegistrationAuthorizationToken {
 	[CmdletBinding()]
 	param
@@ -138,7 +138,7 @@ function Get-AppRegistrationAuthorizationToken {
 
 #### Example 
 
-``` PowerShell
+``` powershell
 # set variables
 $client_id = "<your-app-registration-client-id>"
 $app_secret = "<your-app-registration-secret>"
@@ -177,7 +177,7 @@ Get-AzAccessToken
    [-TenantId <String>]
 ```
 
-``` PowerShell
+``` powershell
 Get-AzAccessToken -ResourceTypeName Arm
 ```
 
@@ -191,13 +191,13 @@ Get-AzAccessToken
    [-TenantId <String>]
 ```
 
-``` PowerShell
+``` powershell
 Get-AzAccessToken -ResourceUrl "https://management.core.windows.net/"
 ```
 
 #### Example 
 
-``` PowerShell
+``` powershell
 # set variables
 $token = Get-AzAccessToken -ResourceUrl "https://management.core.windows.net/"
 $path = "/subscriptions"
@@ -220,7 +220,7 @@ Using the `Microsoft.Azure.Commands.ResourceManager.Common Namespace` .NET Namep
 
 `Get-AzureCachedAccessToken` function:
 
-``` PowerShell
+``` powershell
 function Get-AzureCachedAccessToken {
     # get current Azure Profile
 	$azProfile = [Microsoft.Azure.Commands.Common.Authentication.Abstractions.AzureRmProfileProvider]::Instance.Profile
@@ -239,7 +239,7 @@ function Get-AzureCachedAccessToken {
 
 #### Example 
 
-``` PowerShell
+``` powershell
 $token = Get-AzureCachedAccessToken
 
 $path = "/subscriptions"
