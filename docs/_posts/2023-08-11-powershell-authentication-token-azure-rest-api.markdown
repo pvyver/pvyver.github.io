@@ -57,10 +57,10 @@ xxxxx.yyyyy.zzzzz
 
 > **Note**:  
 > To decode a JWT token, you can use the online tool over here:
-> - [https://jwt.io/]
+> [https://jwt.io/]
 > 
 > To dump the claims in your bearer token so you can validate their contents you can use the following online tool:
-> - [https://jwt.ms/]
+> [https://jwt.ms/]
 
 [https://jwt.io/]:https://jwt.io/
 [https://jwt.ms/]:https://jwt.ms/
