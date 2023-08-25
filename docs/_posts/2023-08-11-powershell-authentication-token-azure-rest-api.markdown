@@ -91,7 +91,7 @@ $data = Invoke-RestMethod -Method Get -Uri $uri -Headers $authHeader
 
 ## Authentication with an App Registration
 
-A conveniant way of authentication is using an App Registration.
+A convenient way of authentication is using an App Registration.
 
 The access token can be aquired using an [access token request with a shared secret].
 
@@ -216,7 +216,7 @@ $result.value
 
 ### Using the token stored in the profile
 
-Using the `Microsoft.Azure.Commands.ResourceManager.Common Namespace` .NET Namepace, you can use the `AcquireAccessToken` Method to get the stored token in profile.
+Using the `Microsoft.Azure.Commands.ResourceManager.Common Namespace` .NET Namespace, you can use the `AcquireAccessToken` Method to get the stored token in profile.
 
 `Get-AzureCachedAccessToken` function:
 

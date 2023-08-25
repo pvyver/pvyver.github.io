@@ -17,17 +17,17 @@ comments: true
 There are multiple `Infrastructure as Code` languages (Terraform, Pulumi, Bicep, ARM).
 
 Depending on the language used, there is a specific way of holding the state of resources from a deployment:
-- Terrraform has its state file that holds the configuration
+- Terraform has its state file that holds the configuration
 - Pulumi has its state backend 
 - Bicep & ARM have Azure as the real state of the resource
 
-The state has always been a weakness of Bicep and ARM. The lifecycle of the resources where dificult to track, you could implement workarounds with [what-if operations] always an additional step to take before a deployment.
+The state has always been a weakness of Bicep and ARM. The lifecycle of the resources where difficult to track, you could implement workarounds with [what-if operations] always an additional step to take before a deployment.
 
 [what-if operations]:https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-what-if?tabs=azure-powershell%2CCLI
 
 ### Deployment Stacks
 
-Microsoft recently anounced a **public preview** of [ARM Deployment Stacks] to tackle this. To me this was the missing element in order to use Bicep or ARM templates.
+Microsoft recently announced a **public preview** of [ARM Deployment Stacks] to tackle this. To me this was the missing element in order to use Bicep or ARM templates.
 
 [ARM Deployment Stacks]:https://techcommunity.microsoft.com/t5/azure-governance-and-management/arm-deployment-stacks-now-public-preview/ba-p/3871180
 
@@ -96,7 +96,7 @@ Delete Deployment Stacks PowerShell & CLI commands:
 [az stack sub delete]:https://learn.microsoft.com/en-us/cli/azure/stack/sub?view=azure-cli-latest#az-stack-sub-delete
 [az stack mg delete]:https://learn.microsoft.com/en-us/cli/azure/stack/mg?view=azure-cli-latest#az-stack-mg-delete
 
-> **Note:** A **Cleanup** can be done after removal of a Deployment Stack (Resources or/and Resource Groups), this is optional flag by default Resources or/and Resource Groups are detached from a Deployment Stack. Possible `flags` for Deploymnt Stack deletation:
+> **Note:** A **Cleanup** can be done after removal of a Deployment Stack (Resources or/and Resource Groups), this is optional flag by default Resources or/and Resource Groups are detached from a Deployment Stack. Possible `flags` for Deployment Stack deletion:
 (*DeleteAll, DeleteResourceGroups ,DeleteResources*). 
 
 ## Deployment Stack - Subscription Example

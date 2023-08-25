@@ -49,7 +49,7 @@ auth method - instructions for which can be found here: https://www.terraform.io
 
 ## To enable Terraform to use `OpenID Connect (OIDC)`
 
-### Add the `use_oidc = true` section to the backend ttings as exmplated in the [azurerm] documentation
+### Add the `use_oidc = true` section to the backend settings as explained in the [azurerm] documentation
 
 [azurerm]:https://developer.hashicorp.com/terraform/language/settings/backends/azurerm 
 
