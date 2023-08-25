@@ -45,6 +45,9 @@ Microsoft recently announced a **public preview** of [ARM Deployment Stacks] to 
 
 [ARM Deployment Stacks]:https://techcommunity.microsoft.com/t5/azure-governance-and-management/arm-deployment-stacks-now-public-preview/ba-p/3871180
 
+Official documentation can be found [over here]
+[over here]:https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deployment-stacks?tabs=azure-powershell
+
 Bicep or ARM template files can be submitted to a Deployment Stack, the Deployment Stacks basically define the resources that are managed by the stack.
 
 #### Creating / Updating Deployment Stacks
