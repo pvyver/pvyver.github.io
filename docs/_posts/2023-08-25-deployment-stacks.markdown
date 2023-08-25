@@ -2,7 +2,7 @@
 layout: post
 title: 'Deployment stacks'
 date:   2023-08-25 
-logo: 'fa-layer-group'
+logo: 'fa-solid fa-layer-group'
 comments: true
 ---
 
