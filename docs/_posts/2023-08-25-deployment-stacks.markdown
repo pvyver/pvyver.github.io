@@ -2,7 +2,7 @@
 layout: post
 title: 'Deployment stacks'
 date:   2023-08-25 
-logo: 'fa fa-code'
+logo: 'cloud-arrow-down'
 comments: true
 ---
 
@@ -156,7 +156,7 @@ param parPurpose             = 'bicepdemo1'
 
 `New-Deploymentstack.ps1`
 
-``` cs
+``` powershell
 $inputObject = @{
     Name                        = "stack-weu-tst-bicepdemo1"
     TemplateFile                = "infra-as-code/bicep/orchestration/bicepdemo1/bicepdemo1.bicep"
@@ -192,7 +192,7 @@ To update a Deployment Stack (update controlled Resource Group, Resources or upd
 
 `Set-Deploymentstack.ps1`
 
-``` cs
+``` powershell
 $inputObject = @{
     Name                        = "stack-weu-tst-bicepdemo1"
     TemplateFile                = "infra-as-code/bicep/orchestration/bicepdemo1/bicepdemo1.bicep"
@@ -220,7 +220,7 @@ To delete a Deployment Stack **and delete the resource groups and resources** yo
 
 `Remove-Deploymentstack.ps1`
 
-``` cs
+``` powershell
 Remove-AzSubscriptionDeploymentStack `
     -name "stack-weu-tst-bicepdemo1" `
     -DeleteAll `
