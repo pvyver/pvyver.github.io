@@ -72,7 +72,7 @@ Creating/Update Deployment Stacks PowerShell & CLI commands:
 [az stack group create]:https://learn.microsoft.com/en-us/cli/azure/stack/group?view=azure-cli-latest#az-stack-group-create
 
 
-> **Note:** You can **Block Unwanted Changes** by setting a `DenySettingsMode` on the Deplotment Stack (*None, DenyDelete, DenyWriteAndDelete*)
+> **Note:** You can **Block Unwanted Changes** by setting a `DenySettingsMode` on the Deployment Stack (*None, DenyDelete, DenyWriteAndDelete*)
 
 #### Deleting Deployment Stacks
 
@@ -96,7 +96,7 @@ Delete Deployment Stacks PowerShell & CLI commands:
 [az stack sub delete]:https://learn.microsoft.com/en-us/cli/azure/stack/sub?view=azure-cli-latest#az-stack-sub-delete
 [az stack mg delete]:https://learn.microsoft.com/en-us/cli/azure/stack/mg?view=azure-cli-latest#az-stack-mg-delete
 
-> **Note:** A **Cleanup** can be done after removal of a Deployment Stack (Resources or/and Resource Groups), this is optional flag by default Resources or/and Resource Groups are detached from a Deployment Stack. Possible `flags`` for Deploymnt Stack deletation:
+> **Note:** A **Cleanup** can be done after removal of a Deployment Stack (Resources or/and Resource Groups), this is optional flag by default Resources or/and Resource Groups are detached from a Deployment Stack. Possible `flags` for Deploymnt Stack deletation:
 (*DeleteAll, DeleteResourceGroups ,DeleteResources*). 
 
 ## Deployment Stack - Subscription Example
@@ -144,7 +144,7 @@ module modFunctionAppWindowsConsumption '../../modules/functionAppWindowsConsump
 ```
 
 `tst-bicepdemo1.bicepparam`
-``` 
+``` cs
 using '../bicepdemo1.bicep'
 
 param parLocation            = 'westeurope'
@@ -156,7 +156,7 @@ param parPurpose             = 'bicepdemo1'
 
 `New-Deploymentstack.ps1`
 
-``` powershell
+``` cs
 $inputObject = @{
     Name                        = "stack-weu-tst-bicepdemo1"
     TemplateFile                = "infra-as-code/bicep/orchestration/bicepdemo1/bicepdemo1.bicep"
@@ -171,18 +171,18 @@ New-AzSubscriptionDeploymentStack  @inputObject -Force
 #### Deployment Result
 
 Ar subscription level, the Deployment Stack will become visible:
-<img src="../_images/2023-08-25-deployment-stacks_deployment-stack-subscription.png">
+<img src="/_images/2023-08-25-deployment-stacks_deployment-stack-subscription.png">
 
 In the deployed Deployment Stack, the details will be displayed:
-<img src="../_images/2023-08-25-deployment-stacks_deployment-stack-subscription-overview.png">
+<img src="/_images/2023-08-25-deployment-stacks_deployment-stack-subscription-overview.png">
 
 > **Note:** The `Deny status` for all Resource Groups and Resources of the Deployment Stack are set to `denyWriteAndDelete`, the Deployment Stack will block all write and delete actions on the Resource Group or Resources controlled by the Deployment Stack.
 
 Deny assignments:
-<img src="../_images/2023-08-25-deployment-stacks_deployment-stack-subscription-denyassignments.png">
+<img src="/_images/2023-08-25-deployment-stacks_deployment-stack-subscription-denyassignments.png">
 
 In an attemnt of deleting a storage account controlled by the Deployment Stack, will result as a `deny` because of the `deny assignment` created by Deployment Stack:
-<img src="../_images/2023-08-25-deployment-stacks_deployment-stack-subscription-denyassignments-deletesta.png">
+<img src="/_images/2023-08-25-deployment-stacks_deployment-stack-subscription-denyassignments-deletesta.png">
 
 ### Update a Deployment Stack
 
@@ -192,7 +192,7 @@ To update a Deployment Stack (update controlled Resource Group, Resources or upd
 
 `Set-Deploymentstack.ps1`
 
-``` powershell
+``` cs
 $inputObject = @{
     Name                        = "stack-weu-tst-bicepdemo1"
     TemplateFile                = "infra-as-code/bicep/orchestration/bicepdemo1/bicepdemo1.bicep"
@@ -208,11 +208,11 @@ Set-AzSubscriptionDeploymentStack  @inputObject -Force
 
 The `Deny status` for the resources were updated:
 
-<img src="../_images\2023-08-25-deployment-stacks_deployment-stack-subscription-overview-update-denystatus.png">
+<img src="/_images\2023-08-25-deployment-stacks_deployment-stack-subscription-overview-update-denystatus.png">
 
 Also visible in the `Deny assignments` blade:
 
-<img src="../_images/2023-08-25-deployment-stacks_deployment-stack-subscription-update-denyassignments.png">
+<img src="/_images/2023-08-25-deployment-stacks_deployment-stack-subscription-update-denyassignments.png">
 
 ### Delete a Deployment Stack
 
@@ -220,7 +220,7 @@ To delete a Deployment Stack **and delete the resource groups and resources** yo
 
 `Remove-Deploymentstack.ps1`
 
-``` powershell
+``` cs
 Remove-AzSubscriptionDeploymentStack `
     -name "stack-weu-tst-bicepdemo1" `
     -DeleteAll `
