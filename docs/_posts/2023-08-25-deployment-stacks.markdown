@@ -2,7 +2,7 @@
 layout: post
 title: 'Deployment stacks'
 date:   2023-08-25 
-logo: 'cloud-arrow-down'
+logo: 'fa cloud-arrow-down'
 comments: true
 ---
 
