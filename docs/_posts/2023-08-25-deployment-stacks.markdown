@@ -2,7 +2,7 @@
 layout: post
 title: 'Deployment stacks'
 date:   2023-08-25 
-logo: 'layer group'
+logo: 'layer-group'
 comments: true
 ---
 
