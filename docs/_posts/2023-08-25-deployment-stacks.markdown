@@ -10,6 +10,20 @@ comments: true
 
 ## Table of contents
 
+- [Table of contents](#table-of-contents)
+- [Introduction](#introduction)
+  - [Deployment states](#deployment-states)
+  - [Deployment Stacks](#deployment-stacks)
+    - [Creating / Updating Deployment Stacks](#creating--updating-deployment-stacks)
+    - [Deleting Deployment Stacks](#deleting-deployment-stacks)
+- [Deployment Stack - Subscription Example](#deployment-stack---subscription-example)
+  - [Bicep Template \& Parameter files](#bicep-template--parameter-files)
+  - [Deploy a Deployment Stack](#deploy-a-deployment-stack)
+    - [Deployment Result](#deployment-result)
+  - [Update a Deployment Stack](#update-a-deployment-stack)
+    - [Update Result](#update-result)
+  - [Delete a Deployment Stack](#delete-a-deployment-stack)
+
 ## Introduction
 
 ### Deployment states
