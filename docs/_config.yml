@@ -57,3 +57,6 @@ exclude: ['README.md']
 
 include:
   - "_images"
+
+plugins:
+  - jekyll-seo-tag
