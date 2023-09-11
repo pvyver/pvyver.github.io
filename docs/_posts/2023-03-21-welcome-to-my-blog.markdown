@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Welcome to my blog
+description: 'Blog welcome post word'
 date:   2023-03-21 
 logo: 'fa fa-rocket'
 comments: true

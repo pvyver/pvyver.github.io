@@ -1,7 +1,9 @@
 # Site wide configuration
 title: Philip Van de Vyver - Azure Blog
-description: 'A blog with a focus on Microsoft Azure'
+tagline: 'A blog with a focus on Microsoft Azure'
+description: 'A blog for Philip Van de Vyver with a focus on Microsoft Azure containing technical posts regarding everything that Microsoft Azure has to offer'
 url: https://blog.philipvandevyver.com
+author: Philip Van de Vyver
 date_format: '%B %d, %Y'
 fort_awesome_icon: 'cloud'
 
@@ -59,4 +61,3 @@ exclude: ['README.md']
 
 include:
   - "_images"
-
