@@ -50,13 +50,10 @@ redcarpet:
 #   use_coderay: false
 
 # Gems
-gems: ['jekyll-paginate']
+gems: ['jekyll-paginate','jekyll-seo-tag']
 
 # Exclude
 exclude: ['README.md']
 
 include:
   - "_images"
-
-plugins:
-  - jekyll-seo-tag
