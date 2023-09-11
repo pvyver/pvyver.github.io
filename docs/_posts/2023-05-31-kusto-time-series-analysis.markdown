@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Kusto Time Series Analysis for Azure Resources (Forecast, Anomalies)'
-description: Kusto Query Language (KQL) contains native support for creation, manipulation, and analysis of multiple time series. With KQL, you can create and analyze thousands of time series in seconds, enabling near real time monitoring solutions and workflows. This blog zooms in into anomaly detection and forecasting on top of those time series
+description: Kusto Query Language (KQL) contains native support for creation, manipulation, and analysis of multiple time series. With KQL, you can create and analyze thousands of time series in seconds, enabling near real time monitoring solutions and workflows. This blog zooms in into anomaly detection and forecasting on top of those time series.
 image: /_images/2023-05-31-kusto-time-series-analysis-series-decompose-forecast.png
 date:   2023-05-31 
 logo: 'calculator'

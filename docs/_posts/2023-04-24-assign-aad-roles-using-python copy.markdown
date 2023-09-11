@@ -3,6 +3,7 @@ layout: post
 title: Assigning Azure Active Directory Roles for users and service principals using Python, az rest and Graph API 
 date:   2023-04-24 
 logo: 'fa fa-code'
+description: This article will describe how to assign Azure AD roles to Azure AD `users` and `app registration (service principal (SPN))` using the [Azure AD Graph API] with the [az cli] & [az rest] command.
 comments: true
 ---
  

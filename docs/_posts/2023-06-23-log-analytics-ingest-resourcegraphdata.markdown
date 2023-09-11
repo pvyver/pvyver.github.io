@@ -3,8 +3,15 @@ layout: post
 title: 'Ingest Azure resource data into a Log Analytics Workspace Custom Table'
 date:   2023-06-23 
 logo: 'table'
+description: This post is outdated, Creating Log Analytics workspace Log queries sometimes requires data from resources that is not available in any Log Analytics workspace table. As workaround, I developed a Logic App that queries Azure Resource Graph and injects the Logs in a Log Analytics workspace using the Azure Monitor Data Collector API
+image: /_images/2023-06-23-log-analytics-ingest-resourcegraphdata-resources2log.png
 comments: true
 ---
+
+** This post is outdated** 
+> Log Analytics is now [natively supporting Resource Graph queries]
+
+[natively supporting Resource Graph queries]:https://techcommunity.microsoft.com/t5/azure-observability-blog/query-azure-resource-graph-from-azure-monitor/ba-p/3918298
 
 ## Introduction
 

@@ -52,6 +52,8 @@ redcarpet:
 #   use_coderay: false
 
 # Plugins
+# https://github.com/jekyll/jekyll-paginate
+# https://github.com/jekyll/jekyll-seo-tag
 plugins:
   - jekyll-paginate
   - jekyll-seo-tag

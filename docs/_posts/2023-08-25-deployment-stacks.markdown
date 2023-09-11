@@ -4,6 +4,8 @@ title: 'Deployment stacks'
 date:   2023-08-25 
 logo: 'bars'
 comments: true
+description: Microsoft recently announced a public preview of ARM Deployment Stacks to tackle resource deployment states. This article explains the Deployment Stacks in detail.
+image: /_images/2023-08-11-powershell-authentication-token-azure-rest-api-authication-flow.png
 ---
 
 <img src="/_images/2023-08-25-deployment-stacks_deployment-stack-icon.png">

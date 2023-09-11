@@ -4,6 +4,8 @@ title: 'PowerShell Authentication tokens for Azure REST API'
 date:   2023-08-11 
 logo: 'fa fa-code'
 comments: true
+description: In this article, I want to explain the authentication options that you have with PowerShell to interact with the Azure REST API
+image: /_images/2023-08-11-powershell-authentication-token-azure-rest-api-authication-flow.png
 ---
 
 ### Table of contents

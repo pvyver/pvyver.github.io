@@ -4,6 +4,8 @@ title: Deploying Terraform using Github Actions with OpenID Connect (OIDC)
 date:   2023-05-08 
 logo: 'github'
 comments: true
+description: OpenID Connect (OIDC) allows your GitHub Actions workflows to access resources in Azure, without needing to store the Azure credentials as long-lived GitHub secrets. This article will explain how to authenticate using OIDC with Terraform.
+image: /_images/2023-05-08-github-terraform-actions-deployment_github-actions.png
 ---
  
 ![Github Actions](/_images/2023-05-08-github-terraform-actions-deployment_github-actions.png)

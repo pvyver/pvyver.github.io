@@ -1,6 +1,8 @@
 ---
 layout: post
 title: 'Kusto Time Series Analysis for Azure Resources - Workbook'
+description: Kusto Query Language (KQL) contains native support for creation, manipulation, and analysis of multiple time series. With KQL, you can create and analyze thousands of time series in seconds, enabling near real time monitoring solutions and workflows. This blog zooms in into anomaly detection and forecasting on top of those time series and contains an example of a workbook to visualize the results.
+image: /_images/2023-06-12-kusto-time-series-analysis-workbook-trendline.png
 date:   2023-06-12 
 logo: 'calculator'
 comments: true
