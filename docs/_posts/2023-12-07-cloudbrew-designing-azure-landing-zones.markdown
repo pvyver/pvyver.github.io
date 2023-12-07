@@ -30,6 +30,6 @@ Best practices together with experience from the field, will make you ready to s
 
 Here's a link to the <a href="https://blog.philipvandevyver.com/_docs/Designing your Landing Zones.pdf">Presentation deck</a>
 
-I want to thank the oranization and [AZUG] for the invitation and oportunity!
+I want to thank the organization and [AZUG] for the invitation and opportunity!
 
 [AZUG]:https://www.azug.be/ 
