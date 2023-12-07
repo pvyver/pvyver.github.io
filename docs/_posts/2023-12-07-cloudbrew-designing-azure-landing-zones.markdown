@@ -14,8 +14,6 @@ An Azure landing zone is an environment that follows key design principles acros
 In this session I'll discuss how to design a "Platform" and "Application" Landing Zone using these design areas.
 Best practices together with experience from the field, will make you ready to successfully design your landing zones.
 
-[Presentation deck]:"/_images/2023-12-07-cloudbrew-designing-azure-landing-zones-cloudbrew.svg"
+[Presentation deck1]:1/_docs/Designing your Landing Zones.pdf
 
-
-
-<a href="https://blog.philipvandevyver.com/_images/2023-12-07-cloudbrew-designing-azure-landing-zones-cloudbrew.svg">Presentation deck</a>
+<a href="https://blog.philipvandevyver.com/_docs/Designing your Landing Zones.pdf">Presentation deck</a>
