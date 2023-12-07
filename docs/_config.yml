@@ -63,3 +63,4 @@ exclude: ['README.md']
 
 include:
   - "_images"
+  - "_docs"
