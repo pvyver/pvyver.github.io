@@ -23,7 +23,7 @@ I will ingest data from weather data that is collected from the [Weather API] AP
 
 [Weather API]:https://www.weatherapi.com/
 
-![Flow](../_images/2023-12-12-log-analytics-ingest-data-using-dce-and-dcr-flow.png)
+![Flow](/_images/2023-12-12-log-analytics-ingest-data-using-dce-and-dcr-flow.png)
 
 1. Post the content of a `json` file from all `Azure Resources` to the `Data Collection Endpoint`
 2. Use the `Data Collection Rule` to transform the data and stream to a `Log Analytics workspace` `Weather_CL` custom table.
@@ -32,7 +32,7 @@ I will ingest data from weather data that is collected from the [Weather API] AP
 
 ### Log Analytics workspace Weather_CL table
 
-<img src="../_images/2023-06-23-log-analytics-ingest-resourcegraphdata-lawtable.png" width="50">
+<img src="/_images/2023-06-23-log-analytics-ingest-resourcegraphdata-lawtable.png" width="50">
 
 In order to ingest data we have to setup a `Log Analytics workspace` custom table with a predefined schema. 
 
@@ -100,11 +100,11 @@ Invoke-RestMethod -Method Put -Uri $uri -Headers $authHeader -Body $jsonBody
 
 The result is a `custom Log Analyitcs workspace Table`:
 
-![resources table](../_images/2023-12-12-log-analytics-ingest-data-using-dce-and-dcr-weather-table.png)
+![resources table](/_images/2023-12-12-log-analytics-ingest-data-using-dce-and-dcr-weather-table.png)
 
 ### Data collection endpoint
 
-<img src="../_images/2023-06-23-log-analytics-ingest-resourcegraphdata-datacollectionendpoint.png" width="50">
+<img src="/_images/2023-06-23-log-analytics-ingest-resourcegraphdata-datacollectionendpoint.png" width="50">
 
 To have an endpoint to send our data to, we have to setup a `Data collection endpoint`.
 
@@ -176,7 +176,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroup -Name "D_dataCol
 
 ### Data collection rule
 
-<img src="../_images/2023-06-23-log-analytics-ingest-resourcegraphdata-datacollectionrule.png" width="50">
+<img src="/_images/2023-06-23-log-analytics-ingest-resourcegraphdata-datacollectionrule.png" width="50">
 
 This is where the magic happens, with the Data collection rule, we can setup:
 
@@ -359,7 +359,7 @@ Invoke-RestMethod -Uri $uri -Method Post -Body $data -Headers $headers;
 
 ### Result
 
-![Result](../_images/2023-12-12-log-analytics-ingest-data-using-dce-and-dcr-result.png)
+![Result](/_images/2023-12-12-log-analytics-ingest-data-using-dce-and-dcr-result.png)
 
 ## Download
 
