@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 'Ingest data into a Log Analytics Workspace using Data Collection Endpoint and Data Collection Rule'
+title: 'Ingest custom data into a Log Analytics Workspace'
 date:   2023-12-12
 logo: 'table'
 description: This post explains how to inject log data in a Log Analytics workspace using the Azure Monitor Data Collector API together with Collection Endpoints (DCE) and Data Collection Rules (DCR)
-image: /_images/2023-12-08-log-analytics-ingest-data-using-dce-and-dcr-resources2log.png
+image: /_images/2023-12-12-log-analytics-ingest-data-using-dce-and-dcr-flow.png
 comments: true
 ---
 
