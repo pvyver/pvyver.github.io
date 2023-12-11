@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Ingest data into a Log Analytics Workspace using Data Collection Endpoint and Data Collection Rule'
-date:   2023-06-23 
+date:   2023-12-12
 logo: 'table'
 description: This post explains how to inject log data in a Log Analytics workspace using the Azure Monitor Data Collector API together with Collection Endpoints (DCE) and Data Collection Rules (DCR)
 image: /_images/2023-12-08-log-analytics-ingest-data-using-dce-and-dcr-resources2log.png
@@ -10,24 +10,31 @@ comments: true
 
 ## Introduction
 
+In my organization, we often collect custom data in Azure Monitor Logs. On those logs, we create insights in Azure Monitor Workbooks or create Azure Monitor Alerts upon the loghs.
+
 This post describes how to inject log data in a `Log Analytics workspace` using the `Azure Monitor` [Data Collector API]:
 
 [Data Collector API]:https://learn.microsoft.com/en-us/azure/azure-monitor/logs/logs-ingestion-api-overview
 
-![Flow](../_images/2023-12-08-log-analytics-ingest-data-using-dce-and-dcr-resources2log.png)
 
 ### Flow
-1. Query the `Azure Resource Graph` for all `Azure Resources` (interval 15 minutes)
-2. Post the retreived `json` data from all `Azure Resources` to the `Data Collection Endpoint`
-3. Use the `Data Collection Rule` to transform the data and stream to a `Log Analytics workspace  Custom Table`
+
+I will ingest data from weather data that is collected from the [Weather API] API.
+
+[Weather API]:https://www.weatherapi.com/
+
+![Flow](../_images/2023-12-12-log-analytics-ingest-data-using-dce-and-dcr-flow.png)
+
+1. Post the content of a `json` file from all `Azure Resources` to the `Data Collection Endpoint`
+2. Use the `Data Collection Rule` to transform the data and stream to a `Log Analytics workspace` `Weather_CL` custom table.
 
 ## The Setup
 
-### Log Analytics workspace Resources_CL Table
+### Log Analytics workspace Weather_CL table
 
 <img src="../_images/2023-06-23-log-analytics-ingest-resourcegraphdata-lawtable.png" width="50">
 
-In order to ingest data we have to setup a `Log Analytics workspace` custom table with a predefined schema. The fields more or less match the fields from the `Azure Resource Graph Resources`, but some of them are not allowed to be used in a custom `Log Analytics workspace Table`
+In order to ingest data we have to setup a `Log Analytics workspace` custom table with a predefined schema. 
 
 Here is the schema I used to create the table:
 
@@ -36,7 +43,7 @@ Here is the schema I used to create the table:
 {
     "properties": {
         "schema": {
-            "name": "Resources_CL",
+            "name": "Weather_CL",
             "columns": [
                 {
                     "name": "TimeGenerated",
@@ -44,67 +51,11 @@ Here is the schema I used to create the table:
                     "description": "The time at which the data was generated"
                 },
                 {
-                    "name": "extendedLocation",
-                    "type": "dynamic"
-                },
-                {
-                    "name": "identity",
-                    "type": "dynamic"
-                },
-                {
                     "name": "location",
                     "type": "dynamic"
                 },
                 {
-                    "name": "managedBy",
-                    "type": "dynamic"
-                },
-                {
-                    "name": "name",
-                    "type": "string"
-                },
-                {
-                    "name": "plan",
-                    "type": "dynamic"
-                },
-                {
-                    "name": "properties",
-                    "type": "dynamic"
-                },
-                {
-                    "name": "resourceGroup",
-                    "type": "dynamic"
-                },
-                {
-                    "name": "resourceId",
-                    "type": "string"
-                },
-                {
-                    "name": "resourceKind",
-                    "type": "dynamic"
-                },
-                {
-                    "name": "resourceTenantId",
-                    "type": "string"
-                },
-                {
-                    "name": "resourceType",
-                    "type": "string"
-                },
-                {
-                    "name": "sku",
-                    "type": "dynamic"
-                },
-                {
-                    "name": "subscriptionId",
-                    "type": "string"
-                },
-                {
-                    "name": "tags",
-                    "type": "dynamic"
-                },
-                {
-                    "name": "zones",
+                    "name": "current",
                     "type": "dynamic"
                 }
             ]
@@ -123,7 +74,7 @@ For this example I used the `PowerShell` way with the `Invoke-RestMethod`
 # variables
 $resourceGroup = "<your resource group>"
 $logAnalyticsworkspaceId = "<your Log Analytics workspace Resource Id>"
-$tableName = "Resources_CL"
+$tableName = "Weather_CL"
 
 function get-azCachedAccessToken() {
     $currentAzureContext = Get-AzContext
@@ -149,7 +100,7 @@ Invoke-RestMethod -Method Put -Uri $uri -Headers $authHeader -Body $jsonBody
 
 The result is a `custom Log Analyitcs workspace Table`:
 
-![resources table](/_images/2023-06-23-log-analytics-ingest-resourcegraphdata-resourcestable.png)
+![resources table](../_images/2023-12-12-log-analytics-ingest-data-using-dce-and-dcr-weather-table.png)
 
 ### Data collection endpoint
 
@@ -285,74 +236,18 @@ To deploy the Data Collection Rule, I use this ARM template:
             "type": "Microsoft.Insights/dataCollectionRules",
             "name": "[parameters('dataCollectionRuleName')]",
             "location": "[parameters('location')]",
-            "apiVersion": "2021-09-01-preview",
+            "apiVersion": "2022-06-01",
             "properties": {
                 "dataCollectionEndpointId": "[parameters('endpointResourceId')]",
                 "streamDeclarations": {
-                    "Custom-Resources_CL": {
+                    "Custom-WeatherRawData": {
                         "columns": [
-                            {
-                                "name": "id",
-                                "type": "string"
-                            },
-                            {
-                                "name": "name",
-                                "type": "string"
-                            },
-                            {
-                                "name": "type",
-                                "type": "string"
-                            },
-                            {
-                                "name": "tenantId",
-                                "type": "string"
-                            },
-                            {
-                                "name": "kind",
-                                "type": "dynamic"
-                            },
                             {
                                 "name": "location",
                                 "type": "dynamic"
                             },
                             {
-                                "name": "resourceGroup",
-                                "type": "dynamic"
-                            },
-                            {
-                                "name": "subscriptionId",
-                                "type": "string"
-                            },
-                            {
-                                "name": "managedBy",
-                                "type": "dynamic"
-                            },
-                            {
-                                "name": "sku",
-                                "type": "dynamic"
-                            },
-                            {
-                                "name": "plan",
-                                "type": "dynamic"
-                            },
-                            {
-                                "name": "properties",
-                                "type": "dynamic"
-                            },
-                            {
-                                "name": "tags",
-                                "type": "dynamic"
-                            },
-                            {
-                                "name": "identity",
-                                "type": "dynamic"
-                            },
-                            {
-                                "name": "zones",
-                                "type": "dynamic"
-                            },
-                            {
-                                "name": "extendedLocation",
+                                "name": "current",
                                 "type": "dynamic"
                             }
                         ]
@@ -369,18 +264,13 @@ To deploy the Data Collection Rule, I use this ARM template:
                 "dataFlows": [
                     {
                         "streams": [
-                            "Custom-Resources_CL"
+                            "Custom-WeatherRawData"
                         ],
                         "destinations": [
                             "myworkspace"
                         ],
-                        "transformKql": "source 
-                        | extend TimeGenerated=now() 
-                        | extend resourceType=[\"type\"]
-                        | extend resourceId=id
-                        | extend resourceTenantId=tenantId
-                        | extend resourceKind=[\"kind\"]",
-                        "outputStream": "Custom-Resources_CL"
+                        "transformKql": "source | extend TimeGenerated=now()",
+                        "outputStream": "Custom-Weather_CL"
                     }
                 ]
             }
@@ -414,72 +304,65 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroup -Name "D_dataCol
     -endpointResourceId $dataCollectionEndpointResourceId
 ``` 
 
-### Logic App
-
-<img src="../_images/2023-06-23-log-analytics-ingest-resourcegraphdata-logicapp.png" width="50">
+## Ingest data
 
 
-Now everything is prepared for ingestion, we can setup the `Logic App`. The `Logic App` will use a `User Assigned Managed Identity` that is linked with the `Logic App`. Form more details on the setup look at the article [Authenticate access to Azure resources with managed identities in Azure Logic Apps]
+### App Registration
 
- [Authenticate access to Azure resources with managed identities in Azure Logic Apps]:https://learn.microsoft.com/en-us/azure/logic-apps/create-managed-service-identity?tabs=standard
+Log ingestion requiquires an identity in the Microsoft Entra tenant. 
+Over here you can find information on [how to create a Microsoft Entra application] to authenticate.
 
-The `User Assigned Managed Identity` will allow us to authenticate securely to `Azure Resource Graph` and ingest the data into the `Custom Log Analytics workspace table`.
+[how to create a Microsoft Entra application]:https://learn.microsoft.com/en-us/azure/azure-monitor/logs/tutorial-logs-ingestion-api#create-microsoft-entra-application
 
-We need the following `Role Based Access Control (RBAC)` role assignments for the `User Assigned Managed Identity`:
+### Role Assignment  
 
-- `Reader` role on the `subscription`: To read out the resources of the subscription
-- `Monitoring Metrics Publisher` role on the `Data collection rule`: permissions to post data to the `Data collection rule` and `Data collection endpoint`
+To submit data to a `Data Collection Endpoint` you must have the `Monitoring Metrics Publisher` role on the `Data collection rule`
+
+Over [HERE] you can find more information on how to create that role assignment.
+
+[HERE]:https://learn.microsoft.com/en-us/azure/azure-monitor/logs/tutorial-logs-ingestion-portal#assign-permissions-to-the-dcr
 
 > **NOTE:** It can take some time to (up to 30 minutes) get the actual permissions to the Data collection rule! 
 
-Here's the Logic App Flow:
+### Submitting data to the Data Collection Endpoint
 
-<img src="../_images/2023-06-23-log-analytics-ingest-resourcegraphdata-logicappdesigner.png">
+#### PowerShell script
 
-#### Logic App Design
+``` PowerShell
+$DceURI = "https://dce-weu-prd-datacollection-xxxx.westeurope-1.ingest.monitor.azure.com"
+$DcrImmutableId = "dcr-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+$streamName = "Custom-WeatherRawData" #name of the stream in the DCR that represents the destination table
 
-- A few **variables** are set
- 
-  - **DceURI**: the Uri of the Data collection rule (can be found on the Data collection rule Essentials view in the portal)
- 
-  - **DcrImmutableId**: The immutableId property of the DCR object (can be found on the Data collection rule Essentials `JSON view` in the portal)
-  
-  - **CustomTableName**: The name of the custom table (`Resource_CL`)
-  
-- **HTTP - Get Resource Graph Resources**
-  
-  Using the `Azure Resource Graph API` query the `Resources`. The `User Assigned Managed Identity` is used for this action.
-  
-  <img src="../_images/2023-06-23-log-analytics-ingest-resourcegraphdata-logicappdesigner_getresourcegraphresources.png">
+#information needed to authenticate to AAD and obtain a bearer for app-am-alertcc-ingestion
+$tenantId = "<your tenant id>" #Tenant ID the data collection endpoint resides in
+$appId = "<your app id>" #Application ID created and granted permissions
+$appSecret = "<your app secret>" #Secret created for the application
 
-- **HTTP - Post - Resources to Data Collection Endpoint**
-  
-  Concatinate the variables to a usable endpoint for ingestion: *concat(variables('DceURI'),'/dataCollectionRules/',variables('DcrImmutableId'),'/streams/Custom-',variables('CustomTableName'),'?api-version=2021-11-01-preview')*
+#Obtain a bearer token used to authenticate against the data collection endpoint
+$scope= [System.Web.HttpUtility]::UrlEncode("https://monitor.azure.com//.default")   
+$body = "client_id=$appId&scope=$scope&client_secret=$appSecret&grant_type=client_credentials";
+$headers = @{"Content-Type"="application/x-www-form-urlencoded"};
+$uri = "https://login.microsoftonline.com/$tenantId/oauth2/v2.0/token"
+$token = $null
+$token = (Invoke-RestMethod -Uri $uri -Method "Post" -Body $body -Headers $headers).access_token
 
-  Ingest the `data` field of the previously fetched `Azure Resource Graph` query the `Resources` data.
+# payload
+$data = Get-Content ".\content.json"
+$data = "[" + $data + "]"
 
-  The `User Assigned Managed Identity` is used for this action.
+# Sending the data to Log Analytics via the DCR!
+$headers = @{"Authorization" = "Bearer $token"; "Content-Type" = "application/json" };
+$uri = "$DceURI/dataCollectionRules/$DcrImmutableId/streams/$streamName" + "?api-version=2021-11-01-preview";
+Invoke-RestMethod -Uri $uri -Method Post -Body $data -Headers $headers;
 
-  <img src="../_images/2023-06-23-log-analytics-ingest-resourcegraphdata-logicappdesigner_postresourcesdce.png">
-
-## The Result
-
-The data from `Azure Resource Graph` will now be ingested into the `Resources_CL` custom table every 15 minutes.
-
-You can query the latest records in the `Resource_CL` table using the following query:
-
-``` Ruby  
-Resources_CL | summarize arg_max(TimeGenerated,*) by resourceId
 ```
 
-The Result looks like this:
+### Result
 
-  <img src="../_images/2023-06-23-log-analytics-ingest-resourcegraphdata-lawresult.png">
-
-You can now start to join the table data with other data in the platform log default tables.
+![Result](../_images/2023-12-12-log-analytics-ingest-data-using-dce-and-dcr-result.png)
 
 ## Download
 
-You can find the templates, scripts and Logic App in my GitHub Repository over [HERE].
+You can find the templates and scripts in my GitHub Repository over [HERE].
 
 [HERE]:https://github.com/pvyver/AzureResourceGraphLogAnalytics/tree/main
