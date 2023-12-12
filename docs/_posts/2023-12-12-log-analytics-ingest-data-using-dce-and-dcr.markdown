@@ -318,9 +318,9 @@ Over here you can find information on [how to create a Microsoft Entra applicati
 
 To submit data to a `Data Collection Endpoint` you must have the `Monitoring Metrics Publisher` role on the `Data collection rule`
 
-Over [HERE] you can find more information on how to create that role assignment.
+You can find more information on [how to create that role assignment] on Microsoft Learn.
 
-[HERE]:https://learn.microsoft.com/en-us/azure/azure-monitor/logs/tutorial-logs-ingestion-portal#assign-permissions-to-the-dcr
+[how to create that role assignment]:https://learn.microsoft.com/en-us/azure/azure-monitor/logs/tutorial-logs-ingestion-portal#assign-permissions-to-the-dcr
 
 > **NOTE:** It can take some time to (up to 30 minutes) get the actual permissions to the Data collection rule! 
 
@@ -363,6 +363,6 @@ Invoke-RestMethod -Uri $uri -Method Post -Body $data -Headers $headers;
 
 ## Download
 
-You can find the templates and scripts in my GitHub Repository over [HERE].
+You can find the templates and scripts in my [GitHub Repository].
 
-[HERE]:https://github.com/pvyver/AzureMonitorLogIngestionAPI
+[GitHub Repository]:https://github.com/pvyver/AzureMonitorLogIngestionAPI
