@@ -3,16 +3,16 @@ layout: post
 title: 'Ingest custom data into a Log Analytics Workspace'
 date:   2023-12-12
 logo: 'table'
-description: This post explains how to inject log data in a Log Analytics workspace using the Azure Monitor Data Collector API together with Collection Endpoints (DCE) and Data Collection Rules (DCR)
+description: This post explains how to ingest log data in a Log Analytics workspace using the Azure Monitor Data Collector API together with Collection Endpoints (DCE) and Data Collection Rules (DCR)
 image: /_images/2023-12-12-log-analytics-ingest-data-using-dce-and-dcr-flow.png
 comments: true
 ---
 
 ## Introduction
 
-In my organization, we often collect custom data in Azure Monitor Logs. On those logs, we create insights in Azure Monitor Workbooks or create Azure Monitor Alerts upon the loghs.
+In my organization, we often collect custom data in Azure Monitor Logs. On those logs, we create insights in Azure Monitor Workbooks or create Azure Monitor Alerts upon the logs.
 
-This post describes how to inject log data in a `Log Analytics workspace` using the `Azure Monitor` [Data Collector API]:
+This post describes how to ingest log data in a `Log Analytics workspace` using the `Azure Monitor` [Data Collector API]:
 
 [Data Collector API]:https://learn.microsoft.com/en-us/azure/azure-monitor/logs/logs-ingestion-api-overview
 
@@ -169,9 +169,9 @@ $dataCollectionEndpointName = "<your data collection endpoint name>"
 
 # deploy dataCollectionEndpoint 
 Write-Output "Deploying Data Collection Endpoint '$dataCollectionEndpointName'.."
-New-AzResourceGroupDeployment -ResourceGroupName $resourceGroup -Name "D_dataCollectionEndpoint" -TemplateFile .\dataCollectionEndpoint.json `
+New-AzResourceGroupDeployment -ResourceGroupName $resourceGroup -Name "D_dataCollectionEndpoint" -TemplateFile infra-as-code\arm\dataCollectionEndpoints\dataCollectionEndpoint.json `
     -dataCollectionEndpointName $dataCollectionEndpointName `
-    -location $location 
+    -location $location | Out-Null
 ```
 
 ### Data collection rule
@@ -297,11 +297,11 @@ $dataCollectionEndpointResourceId = "<data collection endpoint resource id>"
 
 # deploy dataCollectionRule
 Write-Output "Deploying Data Collection Rule '$dataCollectionRuleName'.."
-New-AzResourceGroupDeployment -ResourceGroupName $resourceGroup -Name "D_dataCollectionRule" -TemplateFile .\dataCollectionRules.json `
+New-AzResourceGroupDeployment -ResourceGroupName $resourceGroup -Name "D_dataCollectionRule" -TemplateFile infra-as-code\arm\dataCollectionRules\dataCollectionRules.json `
     -dataCollectionRuleName $dataCollectionRuleName `
     -location $location `
-    -workspaceResourceId $logAnalyticsWorkspaceResourceId `
-    -endpointResourceId $dataCollectionEndpointResourceId
+    -workspaceResourceId $logAnalyticsWorkspaceId `
+    -endpointResourceId "/subscriptions/$subscriptionId/resourceGroups/$resourceGroup/providers/Microsoft.Insights/dataCollectionEndpoints/$dataCollectionEndpointName"  | Out-Null
 ``` 
 
 ## Ingest data
@@ -309,7 +309,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroup -Name "D_dataCol
 
 ### App Registration
 
-Log ingestion requiquires an identity in the Microsoft Entra tenant. 
+Log ingestion requires an identity in the Microsoft Entra tenant. 
 Over here you can find information on [how to create a Microsoft Entra application] to authenticate.
 
 [how to create a Microsoft Entra application]:https://learn.microsoft.com/en-us/azure/azure-monitor/logs/tutorial-logs-ingestion-api#create-microsoft-entra-application
@@ -334,9 +334,9 @@ $DcrImmutableId = "dcr-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 $streamName = "Custom-WeatherRawData" #name of the stream in the DCR that represents the destination table
 
 #information needed to authenticate to AAD and obtain a bearer for app-am-alertcc-ingestion
-$tenantId = "<your tenant id>" #Tenant ID the data collection endpoint resides in
-$appId = "<your app id>" #Application ID created and granted permissions
-$appSecret = "<your app secret>" #Secret created for the application
+$tenantId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"; #Tenant ID the data collection endpoint resides in
+$appId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"; #Application ID created and granted permissions
+$appSecret = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"; #Secret created for the application
 
 #Obtain a bearer token used to authenticate against the data collection endpoint
 $scope= [System.Web.HttpUtility]::UrlEncode("https://monitor.azure.com//.default")   
@@ -347,7 +347,7 @@ $token = $null
 $token = (Invoke-RestMethod -Uri $uri -Method "Post" -Body $body -Headers $headers).access_token
 
 # payload
-$data = Get-Content ".\content.json"
+$data = Get-Content ".\meta\weather\weatherData.json"
 $data = "[" + $data + "]"
 
 # Sending the data to Log Analytics via the DCR!
@@ -365,4 +365,4 @@ Invoke-RestMethod -Uri $uri -Method Post -Body $data -Headers $headers;
 
 You can find the templates and scripts in my GitHub Repository over [HERE].
 
-[HERE]:https://github.com/pvyver/AzureResourceGraphLogAnalytics/tree/main
+[HERE]:https://github.com/pvyver/AzureMonitorLogIngestionAPI
