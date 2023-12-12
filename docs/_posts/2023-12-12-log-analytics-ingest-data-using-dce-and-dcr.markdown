@@ -161,7 +161,7 @@ To setup the `Data collection endpoint`, I use this ARM template:
 
 and use the following PowerShell script to deploy:
 
-``` PowerShell
+``` powershell
 # variables
 $location = "<your deployment location>"
 $resourceGroup = "<your resource group>"
@@ -287,7 +287,7 @@ To deploy the Data Collection Rule, I use this ARM template:
 
 To deploy the Data Collection rule, you can use this PowerShell script:
 
-``` PowerShell
+``` powershell
 # variables
 $location = "<your deployment location>"
 $resourceGroup = "<your resource group>"
@@ -328,7 +328,7 @@ Over [HERE] you can find more information on how to create that role assignment.
 
 #### PowerShell script
 
-``` PowerShell
+``` powershell
 $DceURI = "https://dce-weu-prd-datacollection-xxxx.westeurope-1.ingest.monitor.azure.com"
 $DcrImmutableId = "dcr-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 $streamName = "Custom-WeatherRawData" #name of the stream in the DCR that represents the destination table
