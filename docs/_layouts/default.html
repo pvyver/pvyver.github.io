@@ -47,8 +47,10 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ site.url }}/css/trio.css">
 
-    <!-- Social buttons -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Social buttons 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+    >-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">-->
 
     <!-- Set the canonical URL for search engines -->
@@ -117,13 +119,12 @@
 
                 {% if site.owner.twitter %}
                 <li><a href="http://twitter.com/{{ site.owner.twitter }}">
-                        <i class="fa fa-x-twitter"></i>
-                    </a></li>
+                        <i class="fa-brands fa-square-x-twitter"></i> </a></li>
                 {% endif %}
 
                 {% if site.owner.linkedin %}
                 <li><a href="http://linkedin.com/in/{{ site.owner.linkedin }}">
-                        <i class="fa fa-square-x-twitter"></i>
+                        <i class="fa fa-linkedin-square"></i>
                     </a></li>
                 {% endif %}
 
