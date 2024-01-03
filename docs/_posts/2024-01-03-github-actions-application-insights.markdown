@@ -2,16 +2,29 @@
 layout: post
 title: 'Github Actions monitoring with Application Insights'
 date: 2024-01-03
-logo: 'table'
+logo: 'github'
 description: This post explains how to monitor Github Actions with Application Insights by submitting request and annotation data to Application Insights 
 image: /_images/2024-01-03-github-actions-application-insights-intro.png
 comments: true
 ---
 
+- [Introduction](#introduction)
+- [Ingest Application Insights Request Telemetry data](#ingest-application-insights-request-telemetry-data)
+  - [Github Action](#github-action)
+    - [PowerShell script](#powershell-script)
+  - [Result](#result)
+- [Ingest Application Insights Release Annotation](#ingest-application-insights-release-annotation)
+  - [Github Action](#github-action-1)
+    - [PowerShell script](#powershell-script-1)
+  - [Result](#result-1)
+
+
 ## Introduction
 
 I love working with Github Actions for Continuous Integration and Deployment.
+
 By default you get emails regarding failed workflows for Github monitoring.
+
 To get more insights in the performance and success of workflows, you can leverage Application Insights to log performance, failures and release annotations.  
 
 ![introduction](/_images/2024-01-03-github-actions-application-insights-intro.png)
