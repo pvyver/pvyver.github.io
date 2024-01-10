@@ -2,7 +2,7 @@
 layout: post
 title: 'Azure Update Manager pre and post events for turned off VMs'
 date: 2024-01-10
-logo: 'fa-wrench'
+logo: 'wrench'
 description: This post explains how to implement pre and post events for VMs that are turned off for patching in Update Manager.
 image: /_images/2024-01-10-update-manager-start-stop-vm-main.png
 comments: true
@@ -40,16 +40,27 @@ The following approach is implemented to start/stop VMs in a Maintenance Configu
 ![introduction](/_images/2024-01-10-update-manager-start-stop-vm-main.png)
 
 1) The `Maintenance Configuration` about to be triggered *(T -20 minutes)* 
+
 2) The `Maintenance Configuration` triggers an event to the Event Grid System Topic with the Event Type: `Microsoft.Maintenance.PreMaintenanceEvent`
+
 3) The `Event Subscription` for `start vm` gets triggered, the `Event Subscription` is configured to pickup events with the Event Type: `Microsoft.Maintenance.PreMaintenanceEvent`, the event subscription is configured to trigger a webhook with the payload from the event.
+
 4) The `Automation Webhook` for starting the start vm `runbook` gets triggered with the payload from the event.
+
 5) The `Automation Runbook` for start vm gets triggered.
+
 6) The `Automation Runbook` will get all the VMs and Arc Virtual Machines in scope and starts the deallocated or stopped ones. The runbook will tag the VMs that are started with the `UpdateManagerState tag` and `RunId value` for the maintenance configuration run.
+
 7) The actual patching will start *(T -0 minutes)* 
+
 8) After the configured time window for the patching, The `Maintenance Configuration` triggers an event to the Event Grid System Topic with the Event Type: `Microsoft.Maintenance.PostMaintenanceEvent` 
+
 9) The `Event Subscription` for `stop vm` gets triggered, the `Event Subscription` is configured to pickup events with the Event Type: `Microsoft.Maintenance.PostMaintenanceEvent`, the event subscription is configured to trigger a webhook with the payload from the event.
+
 10) The `Automation Webhook` for starting the stop vm `runbook` gets triggered with the payload from the event.
+
 11) The `Automation Runbook` for stop vm gets triggered.
+
 12) The `Automation Runbook` will get all the VMs and Arc Virtual Machines in scope and stops the started machines with the `UpdateManagerState tag` and `RunId value` for the maintenance configuration run. The tag will be removed after stopping the VMs and Arc Virtual Machines.
 
 ## Configuration
