@@ -3,10 +3,25 @@ layout: post
 title: 'Azure Update Manager pre and post events for turned off VMs'
 date: 2024-01-10
 logo: 'wrench'
-description: This post explains how to implement pre and post events for VMs that are turned off for patching in Update Manager.
+description: This post explains how to implement pre and post events for VMs that are turned off for patching in Update Manager using Azure Automation.
 image: /_images/2024-01-10-update-manager-start-stop-vm-main.png
 comments: true
 ---
+
+- [Introduction](#introduction)
+- [Approach](#approach)
+- [Configuration](#configuration)
+  - [User Assigned Managed Identity](#user-assigned-managed-identity)
+  - [Automation Account](#automation-account)
+    - [Automation Account Modules](#automation-account-modules)
+    - [Automation Account Variable](#automation-account-variable)
+    - [Automation Account Runbooks](#automation-account-runbooks)
+    - [Automation Account Webhooks](#automation-account-webhooks)
+  - [Register your subscription for public preview](#register-your-subscription-for-public-preview)
+  - [Maintenance Configuration](#maintenance-configuration)
+  - [Event Grid Topic](#event-grid-topic)
+    - [Event Grid Subscriptions](#event-grid-subscriptions)
+- [Result](#result)
 
 ## Introduction
 
