@@ -377,3 +377,15 @@ In the `Create Event Subscription` wizard, fill in the following:
 
 Repeat the `Create Event Subscription` wizard for the *stop-vm* `Event Subscription` and select the *Post Maintenance Event* event type.
 
+## Result
+
+As result of the configuration, the Maintenance Configuration will: 
+
+- Start the Virtual Machines that are turned off using an Automation Runbook
+
+![start vm job](/_images/2024-01-10-update-manager-start-stop-automation-job-start-vm.png)
+
+- Stop the Virtual Machines that are turned off using an Automation Runbook
+
+![stop vm job](/_images/2024-01-10-update-manager-start-stop-automation-job-stop-vm.png)
+
