@@ -76,8 +76,8 @@ The following approach is implemented to start/stop VMs in a Maintenance Configu
 [Assign the following roles] to the `User Assigned Managed Identity` at `subscription` scope:
 
 - **Reader** (To read out Azure Resource Graph for the Maintenance Runs) 
-- **Virtual Machine Contributor** (To start/stop the VMs)
 - **Tag Contributor** (To tag the VMs and identity when started)
+- **Virtual Machine Contributor** (To start/stop the VMs)
 
 [Assign the following roles]:https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal?tabs=delegate-condition
 
