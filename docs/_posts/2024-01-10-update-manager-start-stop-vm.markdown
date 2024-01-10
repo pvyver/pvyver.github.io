@@ -2,7 +2,7 @@
 layout: post
 title: 'Azure Update Manager pre and post events for turned off VMs'
 date: 2024-01-10
-logo: 'github'
+logo: 'fa-screwdriver-wrench'
 description: This post explains how to implement pre and post events for VMs that are turned off for patching in Update Manager.
 image: /_images/2024-01-10-update-manager-start-stop-vm-main.png
 comments: true
