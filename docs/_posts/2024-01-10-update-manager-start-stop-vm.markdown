@@ -201,7 +201,7 @@ $allMachines | ForEach-Object {
     $mute = Set-AzContext -Subscription $subscriptionId
     $vm = Get-AzVM -ResourceGroupName $rg -Name $name -Status -DefaultProfile $mute
 
-    $state = ($vm.Statuses[1].DisplayStatus -split " ")[1]
+    $state = ($vm.PowerState -split " ")[1]
     if($state -in $startableStates) {
         Write-Output "Starting '$($name)' ..."
 
@@ -261,11 +261,9 @@ Start-Sleep -Seconds 30
 Write-Output "Querying ARG to get machine details [MaintenanceRunId=$maintenanceRunId][ResourceSubscriptionIdsCount=$($resourceSubscriptionIds.Count)]"
 
 $argQuery = @"
-    maintenanceresources 
-    | where type =~ 'microsoft.maintenance/applyupdates'
-    | where properties.correlationId =~ '$($maintenanceRunId)'
-    | where id has '/providers/microsoft.compute/virtualmachines/'
-    | order by id asc
+    resources
+    | where type == 'microsoft.compute/virtualmachines'
+    | where tags.UpdateManagerState =~ '$($maintenanceRunId)'
 "@
 
 Write-Output "Arg Query Used: $argQuery"
@@ -289,7 +287,7 @@ $jobIDs= New-Object System.Collections.Generic.List[System.Object]
 $stoppableStates = "starting", "running"
 
 $allMachines | ForEach-Object {
-    $vmId =  $_.properties.resourceId
+    $vmId =  $_.id
 
     $split = $vmId -split "/";
     $subscriptionId = $split[2]; 
@@ -301,7 +299,7 @@ $allMachines | ForEach-Object {
     $mute = Set-AzContext -Subscription $subscriptionId
     $vm = Get-AzVM -ResourceGroupName $rg -Name $name -Status -DefaultProfile $mute
 
-    $state = ($vm.Statuses[1].DisplayStatus -split " ")[1]
+    $state = ($vm.PowerState -split " ")[1]
     if($state -in $stoppableStates) {
         Write-Output "Stopping '$($name)' ..."
 
