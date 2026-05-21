@@ -5,10 +5,10 @@ date:   2023-08-25
 logo: 'bars'
 comments: true
 description: Microsoft recently announced a public preview of ARM Deployment Stacks to tackle resource deployment states. This article explains the Deployment Stacks in detail.
-image: /_images/2023-08-11-powershell-authentication-token-azure-rest-api-authication-flow.png
+image: /images/2023-08-11-powershell-authentication-token-azure-rest-api-authication-flow.png
 ---
 
-<img src="/_images/2023-08-25-deployment-stacks_deployment-stack-icon.png">
+<img src="/images/2023-08-25-deployment-stacks_deployment-stack-icon.png">
 
 ## Table of contents
 
@@ -191,18 +191,18 @@ New-AzSubscriptionDeploymentStack  @inputObject -Force
 #### Deployment Result
 
 Ar subscription level, the Deployment Stack will become visible:
-<img src="/_images/2023-08-25-deployment-stacks_deployment-stack-subscription.png">
+<img src="/images/2023-08-25-deployment-stacks_deployment-stack-subscription.png">
 
 In the deployed Deployment Stack, the details will be displayed:
-<img src="/_images/2023-08-25-deployment-stacks_deployment-stack-subscription-overview.png">
+<img src="/images/2023-08-25-deployment-stacks_deployment-stack-subscription-overview.png">
 
 > **Note:** The `Deny status` for all Resource Groups and Resources of the Deployment Stack are set to `denyWriteAndDelete`, the Deployment Stack will block all write and delete actions on the Resource Group or Resources controlled by the Deployment Stack.
 
 Deny assignments:
-<img src="/_images/2023-08-25-deployment-stacks_deployment-stack-subscription-denyassignments.png">
+<img src="/images/2023-08-25-deployment-stacks_deployment-stack-subscription-denyassignments.png">
 
 In an attemnt of deleting a storage account controlled by the Deployment Stack, will result as a `deny` because of the `deny assignment` created by Deployment Stack:
-<img src="/_images/2023-08-25-deployment-stacks_deployment-stack-subscription-denyassignments-deletesta.png">
+<img src="/images/2023-08-25-deployment-stacks_deployment-stack-subscription-denyassignments-deletesta.png">
 
 ### Update a Deployment Stack
 
@@ -232,7 +232,7 @@ The `Deny status` for the resources were updated:
 
 Also visible in the `Deny assignments` blade:
 
-<img src="/_images/2023-08-25-deployment-stacks_deployment-stack-subscription-update-denyassignments.png">
+<img src="/images/2023-08-25-deployment-stacks_deployment-stack-subscription-update-denyassignments.png">
 
 ### Delete a Deployment Stack
 

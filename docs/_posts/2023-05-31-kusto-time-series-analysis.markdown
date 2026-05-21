@@ -2,13 +2,13 @@
 layout: post
 title: 'Kusto Time Series Analysis for Azure Resources (Forecast, Anomalies)'
 description: Kusto Query Language (KQL) contains native support for creation, manipulation, and analysis of multiple time series. With KQL, you can create and analyze thousands of time series in seconds, enabling near real time monitoring solutions and workflows. This blog zooms in into anomaly detection and forecasting on top of those time series.
-image: /_images/2023-05-31-kusto-time-series-analysis-series-decompose-forecast.png
+image: /images/2023-05-31-kusto-time-series-analysis-series-decompose-forecast.png
 date:   2023-05-31 
 logo: 'calculator'
 comments: true
 ---
 
-![make-series timechart](/_images/2023-05-31-kusto-time-series-analysis-series-decompose-forecast.png)
+![make-series timechart](/images/2023-05-31-kusto-time-series-analysis-series-decompose-forecast.png)
 
 ## Introduction
 
@@ -56,7 +56,7 @@ AzureMetrics
 ```
 
 #### Result:
-![timechart](/_images/2023-05-31-kusto-time-series-analysis-timechart.png)
+![timechart](/images/2023-05-31-kusto-time-series-analysis-timechart.png)
 
 ## Time Series Creation using 'make-series'
 
@@ -92,7 +92,7 @@ AzureMetrics
 
 #### Result
 
-![make-series](/_images/2023-05-31-kusto-time-series-analysis-make-series.png)
+![make-series](/images/2023-05-31-kusto-time-series-analysis-make-series.png)
 
 The result shows a set of time series, the `average` of the `CurrentConnections` with an interval of `1 hour` from `30 days` ago until `yesterday`.
 
@@ -118,7 +118,7 @@ AzureMetrics
 
 #### Result
 
-![make-series timechart](/_images/2023-05-31-kusto-time-series-analysis-make-series-timechart.png)
+![make-series timechart](/images/2023-05-31-kusto-time-series-analysis-make-series-timechart.png)
 
 ## Forecasting
 
@@ -169,7 +169,7 @@ AzureMetrics
 
 The [series_decompose_forecast()] function adds the series for the number of points stated in the function. Resulting in a cool timechart with a future `Forecast` timeline:
 
-![make-series timechart](/_images/2023-05-31-kusto-time-series-analysis-series-decompose-forecast.png)
+![make-series timechart](/images/2023-05-31-kusto-time-series-analysis-series-decompose-forecast.png)
 
 ## Anomaly Detection
 
@@ -210,7 +210,7 @@ The result is nice, adding a `Anomalies` timeline for the anomalies. `-1` showin
 
 The only disadvantage is that the anomalies is hard to see if the values of the timeseries are higher. 
 
-![make-series timechart](/_images/2023-05-31-kusto-time-series-analysis-make-series-series-decompose_anomalies.png)
+![make-series timechart](/images/2023-05-31-kusto-time-series-analysis-make-series-series-decompose_anomalies.png)
 
 #### Example Query (fixing the scale of the anomanies)
 
@@ -252,7 +252,7 @@ AzureMetrics
 
 The result is showing a easier interpretable output: 
 
-![series-multiply timechart](/_images/2023-05-31-kusto-time-series-analysis-make-series-series-multiply.png)
+![series-multiply timechart](/images/2023-05-31-kusto-time-series-analysis-make-series-series-multiply.png)
 
 ## Conclusion
 

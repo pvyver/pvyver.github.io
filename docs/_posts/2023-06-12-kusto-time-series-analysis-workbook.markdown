@@ -2,7 +2,7 @@
 layout: post
 title: 'Kusto Time Series Analysis for Azure Resources - Workbook'
 description: Kusto Query Language (KQL) contains native support for creation, manipulation, and analysis of multiple time series. With KQL, you can create and analyze thousands of time series in seconds, enabling near real time monitoring solutions and workflows. This blog zooms in into anomaly detection and forecasting on top of those time series and contains an example of a workbook to visualize the results.
-image: /_images/2023-06-12-kusto-time-series-analysis-workbook-trendline.png
+image: /images/2023-06-12-kusto-time-series-analysis-workbook-trendline.png
 date:   2023-06-12 
 logo: 'calculator'
 comments: true
@@ -30,7 +30,7 @@ For your convenience, I've created an example workbook.
 
 ### Parameters
 
-![Parameters](/_images/2023-06-12-kusto-time-series-analysis-workbook-parameters.png)
+![Parameters](/images/2023-06-12-kusto-time-series-analysis-workbook-parameters.png)
 
 `Timerange`: The TimeRange  
 
@@ -53,7 +53,7 @@ This is done using the [series_decompose_forecast()] function.
 
 [series_decompose_forecast()]:https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/series-decompose-forecastfunction
 
-![Forecast](/_images/2023-06-12-kusto-time-series-analysis-workbook-forecast.png)
+![Forecast](/images/2023-06-12-kusto-time-series-analysis-workbook-forecast.png)
 
 ### Trendline 
 
@@ -61,7 +61,7 @@ This is done using the [series_fit_line()] function.
 
 [series_fit_line()]:https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/series-fit-linefunction
 
-![Trendline](/_images/2023-06-12-kusto-time-series-analysis-workbook-trendline.png)
+![Trendline](/images/2023-06-12-kusto-time-series-analysis-workbook-trendline.png)
 
 ### Anomalies
 
@@ -73,7 +73,7 @@ I also added a table that extracts the `outliers` for the anomalies using the [m
 
 [mv-expand]:https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/mvexpandoperator
 
-![Anomalies](/_images/2023-06-12-kusto-time-series-analysis-workbook-anomalies.png)
+![Anomalies](/images/2023-06-12-kusto-time-series-analysis-workbook-anomalies.png)
 
 ## Download
 

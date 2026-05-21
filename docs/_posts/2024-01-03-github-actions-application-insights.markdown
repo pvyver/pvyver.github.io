@@ -4,7 +4,7 @@ title: 'Github Actions monitoring with Application Insights'
 date: 2024-01-03
 logo: 'github'
 description: This post explains how to monitor Github Actions with Application Insights by submitting request and annotation data to Application Insights 
-image: /_images/2024-01-03-github-actions-application-insights-intro.png
+image: /images/2024-01-03-github-actions-application-insights-intro.png
 comments: true
 ---
 
@@ -27,7 +27,7 @@ By default you get emails regarding failed workflows for Github monitoring.
 
 To get more insights in the performance and success of workflows, you can leverage Application Insights to log performance, failures and release annotations.  
 
-![introduction](/_images/2024-01-03-github-actions-application-insights-intro.png)
+![introduction](/images/2024-01-03-github-actions-application-insights-intro.png)
 
 To achieve this, I use:
 - The [Azure SDK for .NET ] to ingest Request Telemetry data
@@ -225,18 +225,18 @@ $telemetryClient.Flush()
 
 When the workflow ran, the following result is shown: 
 
-![Request Workflow Run](/_images/2024-01-03-github-actions-application-insights-request-workflow-main.png)
+![Request Workflow Run](/images/2024-01-03-github-actions-application-insights-request-workflow-main.png)
 
 
-![Request Workflow Run](/_images/2024-01-03-github-actions-application-insights-request-workflow-run.png)
+![Request Workflow Run](/images/2024-01-03-github-actions-application-insights-request-workflow-run.png)
 
 In the Application Insights instance, the following appears:
 
-![Request Operation Workflow Details](/_images/2024-01-03-github-actions-application-insights-request-operation.png)
+![Request Operation Workflow Details](/images/2024-01-03-github-actions-application-insights-request-operation.png)
 
 When clicking on the request, the following details are shown:
 
-![Request Operation Application Insights](/_images/2024-01-03-github-actions-application-insights-request-operation-details.png)
+![Request Operation Application Insights](/images/2024-01-03-github-actions-application-insights-request-operation-details.png)
 
 ## Ingest Application Insights Release Annotation
 
@@ -347,10 +347,10 @@ az rest --method put --uri "$($env:APPLICATION_INSIGHTS_RESOURCE_ID)/Annotations
 
 When the workflow ran, the following result is shown:
 
-![Annotation Result Main](/_images/2024-01-03-github-actions-application-insights-annotation-workflow-main.png)
+![Annotation Result Main](/images/2024-01-03-github-actions-application-insights-annotation-workflow-main.png)
 
-![Annotation Result Run](/_images/2024-01-03-github-actions-application-insights-annotation-workflow-run.png)
+![Annotation Result Run](/images/2024-01-03-github-actions-application-insights-annotation-workflow-run.png)
 
 As result, the release annotation is shown in the graph with some custom properties:
 
-![Annotation Result Application Insights](/_images/2024-01-03-github-actions-application-insights-annotation-result.png)
+![Annotation Result Application Insights](/images/2024-01-03-github-actions-application-insights-annotation-result.png)

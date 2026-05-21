@@ -50,7 +50,7 @@ plugins:
 
 # Asset handling
 keep_files:
-  - _images
+  - images
 
 # Exclude
-exclude: ['README.md']
+exclude: ['README.md', '_images']

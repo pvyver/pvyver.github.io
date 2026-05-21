@@ -4,7 +4,7 @@ title: 'Azure Update Manager pre and post events for turned off VMs'
 date: 2024-01-10
 logo: 'wrench'
 description: This post explains how to implement pre and post events for VMs that are turned off for patching in Update Manager using Azure Automation.
-image: /_images/2024-01-10-update-manager-start-stop-vm-main.png
+image: /images/2024-01-10-update-manager-start-stop-vm-main.png
 comments: true
 ---
 
@@ -52,7 +52,7 @@ In this post, I will explain how to implement pre and post events for VMs that a
 
 The following approach is implemented to start/stop VMs in a Maintenance Configuration of Update Manager
 
-![introduction](/_images/2024-01-10-update-manager-start-stop-vm-main.png)
+![introduction](/images/2024-01-10-update-manager-start-stop-vm-main.png)
 
 1) The `Maintenance Configuration` about to be triggered *(T -20 minutes)* 
 
@@ -86,7 +86,7 @@ The following approach is implemented to start/stop VMs in a Maintenance Configu
 
 [Create a User Assigned Managed Identity]:https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities?pivots=identity-mi-methods-azp
 
-![role assignments](/_images/2024-01-10-update-manager-start-stop-uami.png)
+![role assignments](/images/2024-01-10-update-manager-start-stop-uami.png)
 
 [Assign the following roles] to the `User Assigned Managed Identity` at `subscription` scope:
 
@@ -96,7 +96,7 @@ The following approach is implemented to start/stop VMs in a Maintenance Configu
 
 [Assign the following roles]:https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal?tabs=delegate-condition
 
-![role assignments](/_images/2024-01-10-update-manager-start-stop-subscription-role-assignments.png)
+![role assignments](/images/2024-01-10-update-manager-start-stop-subscription-role-assignments.png)
 
 
 ### Automation Account 
@@ -124,13 +124,13 @@ Make sure you select the Runtime version **7.2** for the Modules
 
 Create a `variable` with the name `var-clientid-id-updatemanager` that contains the `ClientId` from the `User Assigned Managed Identity` that you created earlier.
 
-![automation variable](/_images/2024-01-10-update-manager-start-stop-automation-variable.png)
+![automation variable](/images/2024-01-10-update-manager-start-stop-automation-variable.png)
 
 #### Automation Account Runbooks
 
 There will be 2 runbooks deployed:
 
-![preview feature](/_images/2024-01-10-update-manager-start-stop-automation-runbooks.png)
+![preview feature](/images/2024-01-10-update-manager-start-stop-automation-runbooks.png)
 
 **[Note]** 
 Make sure you select the Runtime version **7.2** for the PowerShell runbook
@@ -341,11 +341,11 @@ Result:
 
 *start vm* webhook
 
-![webhook start vm](/_images/2024-01-10-update-manager-start-stop-automation-wh-start-vm.png)
+![webhook start vm](/images/2024-01-10-update-manager-start-stop-automation-wh-start-vm.png)
 
 *stop vm* webhook
 
-![webhook stop vm](/_images/2024-01-10-update-manager-start-stop-automation-wh-stop-vm.png)
+![webhook stop vm](/images/2024-01-10-update-manager-start-stop-automation-wh-stop-vm.png)
 
 ### Register your subscription for public preview
 
@@ -355,7 +355,7 @@ Follow this guide: [Register your subscription for public preview]
 
 This will enable the preview feature `Pre and Post Events` on your subscription.
 
-![preview feature](/_images/2024-01-10-update-manager-start-stop-vm-preview-feature.png)
+![preview feature](/images/2024-01-10-update-manager-start-stop-vm-preview-feature.png)
 
 ### Maintenance Configuration
 Setup a [Maintenance Configuration for Update Manager] for In guest patching.
@@ -373,7 +373,7 @@ Here's how to create an Event Grid subscription on the Maintenance Configuration
 
 On the selected Maintenance configuration page, under Events, select `Web Hook`.  
 
-![event main](/_images/2024-01-10-update-manager-start-stop-vm-event-create.png)
+![event main](/images/2024-01-10-update-manager-start-stop-vm-event-create.png)
 
 In the `Create Event Subscription` wizard, fill in the following:
 
@@ -386,7 +386,7 @@ In the `Create Event Subscription` wizard, fill in the following:
 - ENDPOINT DETAILS
   - Endpoint for the webhook: *[your endpoint]* (This is the URLs from the webhook you created earlier)
   
-![event start](/_images/2024-01-10-update-manager-start-stop-vm-event-create-start-vm.png)
+![event start](/images/2024-01-10-update-manager-start-stop-vm-event-create-start-vm.png)
 
 Repeat the `Create Event Subscription` wizard for the *stop-vm* `Event Subscription` and select the *Post Maintenance Event* event type.
 
@@ -396,9 +396,9 @@ As result of the configuration, the Maintenance Configuration will:
 
 - Start the Virtual Machines that are turned off using an Automation Runbook
 
-![start vm job](/_images/2024-01-10-update-manager-start-stop-automation-job-start-vm.png)
+![start vm job](/images/2024-01-10-update-manager-start-stop-automation-job-start-vm.png)
 
 - Stop the Virtual Machines that are turned off using an Automation Runbook
 
-![stop vm job](/_images/2024-01-10-update-manager-start-stop-automation-job-stop-vm.png)
+![stop vm job](/images/2024-01-10-update-manager-start-stop-automation-job-stop-vm.png)
 

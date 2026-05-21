@@ -5,7 +5,7 @@ date: 2026-05-21
 logo: 'lock'
 comments: true
 description: 'A comprehensive guide to Microsoft Entra ID Governance, identity lifecycle management, and Zero Trust security implementation'
-image: /_images/2026-05-21-entra-governance-guide.png
+image: /images/2026-05-21-entra-governance-guide.png
 ---
 
 ## 🔒 The Modern Access Challenge

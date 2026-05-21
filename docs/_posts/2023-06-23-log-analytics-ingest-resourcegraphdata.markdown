@@ -4,7 +4,7 @@ title: 'Ingest Azure resource data into a Log Analytics Workspace Custom Table'
 date:   2023-06-23 
 logo: 'table'
 description: This post is outdated, Creating Log Analytics workspace Log queries sometimes requires data from resources that is not available in any Log Analytics workspace table. As workaround, I developed a Logic App that queries Azure Resource Graph and injects the Logs in a Log Analytics workspace using the Azure Monitor Data Collector API
-image: /_images/2023-06-23-log-analytics-ingest-resourcegraphdata-resources2log.png
+image: /images/2023-06-23-log-analytics-ingest-resourcegraphdata-resources2log.png
 comments: true
 ---
 
@@ -21,7 +21,7 @@ As workaround, I developed a `Logic App` that queries `Azure Resource Graph` and
 
 [Data Collector API]:https://learn.microsoft.com/en-us/azure/azure-monitor/logs/logs-ingestion-api-overview
 
-![Flow](/_images/2023-06-23-log-analytics-ingest-resourcegraphdata-resources2log.png)
+![Flow](/images/2023-06-23-log-analytics-ingest-resourcegraphdata-resources2log.png)
 
 ### Flow
 1. Query the `Azure Resource Graph` for all `Azure Resources` (interval 15 minutes)
@@ -32,7 +32,7 @@ As workaround, I developed a `Logic App` that queries `Azure Resource Graph` and
 
 ### Log Analytics workspace Resources_CL Table
 
-<img src="/_images/2023-06-23-log-analytics-ingest-resourcegraphdata-lawtable.png" width="50">
+<img src="/images/2023-06-23-log-analytics-ingest-resourcegraphdata-lawtable.png" width="50">
 
 In order to ingest data we have to setup a `Log Analytics workspace` custom table with a predefined schema. The fields more or less match the fields from the `Azure Resource Graph Resources`, but some of them are not allowed to be used in a custom `Log Analytics workspace Table`
 
@@ -156,11 +156,11 @@ Invoke-RestMethod -Method Put -Uri $uri -Headers $authHeader -Body $jsonBody
 
 The result is a `custom Log Analyitcs workspace Table`:
 
-![resources table](/_images/2023-06-23-log-analytics-ingest-resourcegraphdata-resourcestable.png)
+![resources table](/images/2023-06-23-log-analytics-ingest-resourcegraphdata-resourcestable.png)
 
 ### Data collection endpoint
 
-<img src="/_images/2023-06-23-log-analytics-ingest-resourcegraphdata-datacollectionendpoint.png" width="50">
+<img src="/images/2023-06-23-log-analytics-ingest-resourcegraphdata-datacollectionendpoint.png" width="50">
 
 To have an endpoint to send our data to, we have to setup a `Data collection endpoint`.
 
@@ -232,7 +232,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroup -Name "D_dataCol
 
 ### Data collection rule
 
-<img src="/_images/2023-06-23-log-analytics-ingest-resourcegraphdata-datacollectionrule.png" width="50">
+<img src="/images/2023-06-23-log-analytics-ingest-resourcegraphdata-datacollectionrule.png" width="50">
 
 This is where the magic happens, with the Data collection rule, we can setup:
 
@@ -423,7 +423,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroup -Name "D_dataCol
 
 ### Logic App
 
-<img src="/_images/2023-06-23-log-analytics-ingest-resourcegraphdata-logicapp.png" width="50">
+<img src="/images/2023-06-23-log-analytics-ingest-resourcegraphdata-logicapp.png" width="50">
 
 
 Now everything is prepared for ingestion, we can setup the `Logic App`. The `Logic App` will use a `User Assigned Managed Identity` that is linked with the `Logic App`. Form more details on the setup look at the article [Authenticate access to Azure resources with managed identities in Azure Logic Apps]
@@ -441,7 +441,7 @@ We need the following `Role Based Access Control (RBAC)` role assignments for th
 
 Here's the Logic App Flow:
 
-<img src="/_images/2023-06-23-log-analytics-ingest-resourcegraphdata-logicappdesigner.png">
+<img src="/images/2023-06-23-log-analytics-ingest-resourcegraphdata-logicappdesigner.png">
 
 #### Logic App Design
 
@@ -457,7 +457,7 @@ Here's the Logic App Flow:
   
   Using the `Azure Resource Graph API` query the `Resources`. The `User Assigned Managed Identity` is used for this action.
   
-  <img src="/_images/2023-06-23-log-analytics-ingest-resourcegraphdata-logicappdesigner_getresourcegraphresources.png">
+  <img src="/images/2023-06-23-log-analytics-ingest-resourcegraphdata-logicappdesigner_getresourcegraphresources.png">
 
 - **HTTP - Post - Resources to Data Collection Endpoint**
   
@@ -467,7 +467,7 @@ Here's the Logic App Flow:
 
   The `User Assigned Managed Identity` is used for this action.
 
-  <img src="/_images/2023-06-23-log-analytics-ingest-resourcegraphdata-logicappdesigner_postresourcesdce.png">
+  <img src="/images/2023-06-23-log-analytics-ingest-resourcegraphdata-logicappdesigner_postresourcesdce.png">
 
 ## The Result
 
@@ -481,7 +481,7 @@ Resources_CL | summarize arg_max(TimeGenerated,*) by resourceId
 
 The Result looks like this:
 
-  <img src="/_images/2023-06-23-log-analytics-ingest-resourcegraphdata-lawresult.png">
+  <img src="/images/2023-06-23-log-analytics-ingest-resourcegraphdata-lawresult.png">
 
 You can now start to join the table data with other data in the platform log default tables.
 

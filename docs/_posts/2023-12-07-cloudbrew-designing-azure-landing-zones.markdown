@@ -9,13 +9,13 @@ image: https://www.cloudbrew.be/img/logo.png
 ---
 
 
-<img src="/_images/2023-12-07-cloudbrew-designing-azure-landing-zones-cloudbrew.svg">
+<img src="/images/2023-12-07-cloudbrew-designing-azure-landing-zones-cloudbrew.svg">
 
 I had the opportunity to speak at [Cloudbrew] 2023. 
 
 [Cloudbrew]:https://www.cloudbrew.be/
 
-<img src="/_images/2023-12-07-cloudbrew-designing-azure-landing-zones-cloudbrew-photo.jpg">
+<img src="/images/2023-12-07-cloudbrew-designing-azure-landing-zones-cloudbrew-photo.jpg">
 
 
 My topic was "*Designing your Landing Zones, the cloud adoption way*"

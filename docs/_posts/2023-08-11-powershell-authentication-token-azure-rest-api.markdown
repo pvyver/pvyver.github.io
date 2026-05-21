@@ -5,7 +5,7 @@ date:   2023-08-11
 logo: 'fa fa-code'
 comments: true
 description: In this article, I want to explain the authentication options that you have with PowerShell to interact with the Azure REST API
-image: /_images/2023-08-11-powershell-authentication-token-azure-rest-api-authication-flow.png
+image: /images/2023-08-11-powershell-authentication-token-azure-rest-api-authication-flow.png
 ---
 
 ### Table of contents
@@ -39,7 +39,7 @@ Authentication to the `Azure REST API` is done by using an [OAuth2] bearer token
 
 With this token you can authenticate your request on the Azure REST API:
 
-<img src="/_images/2023-08-11-powershell-authentication-token-azure-rest-api-authication-flow.png">
+<img src="/images/2023-08-11-powershell-authentication-token-azure-rest-api-authication-flow.png">
 
 #### JSON Web Token (JWT)
 
