@@ -5,7 +5,7 @@ date: 2026-05-21
 logo: 'bars'
 comments: true
 description: A detailed look at ClawBox, the tiny AI computer I have on my desk, what we have done together so far, and the possibilities it unlocks.
-image: /_images/2026-05-21-clawbox-hero.png
+image: /_images/2026-05-21-clawbox-device.webp
 ---
 
 - [Introduction](#introduction)
@@ -37,7 +37,7 @@ I have been looking for something different — an AI that actually lives in my 
 
 That search led me to **ClawBox**.
 
-<img src="https://openclawhardware.dev/clawbox-1.webp" alt="ClawBox device on a desk">
+![ClawBox device on a desk](/_images/2026-05-21-clawbox-device.webp)
 
 This post is my first account of what it is, how I set it up, and where things could go from here.
 
@@ -76,7 +76,7 @@ The intelligence layer is an **OpenClaw gateway** — a service running locally 
 
 You can plug in Claude, GPT-4, Gemini, local Ollama models, or the built-in ClawBox AI. You can switch providers in one click. I use Claude for direct conversations and a local llama.cpp model for background jobs — keeping cloud calls to a minimum.
 
-<img src="https://openclawhardware.dev/mail-summary.png" alt="ClawBox AI summarising email">
+![ClawBox AI summarising email](/_images/2026-05-21-clawbox-mail-summary.png)
 
 What this means in practice: the AI does not just answer questions. It **takes actions** on your behalf. It can read and write files, run shell commands, control a browser, call APIs, commit code, and send messages — all from the same chat interface you use to talk to it.
 
@@ -132,7 +132,7 @@ Next was email. ClawBox uses **Maton** as a connector for Outlook and other emai
 - Flag threads that need attention and surface them at the next heartbeat check
 - Send emails after explicit approval
 
-<img src="https://openclawhardware.dev/mail-summary.png" alt="Email summary workflow in ClawBox">
+![Email summary workflow in ClawBox](/_images/2026-05-21-clawbox-mail-summary.png)
 
 The key detail: the AI does not send emails autonomously. It drafts, surfaces, and waits for confirmation. External actions — anything that leaves the machine — always go through a review step. That boundary matters.
 
@@ -176,7 +176,7 @@ The device runs constantly. Cron jobs and heartbeat checks mean the AI can monit
 
 With Ollama installed and llama.cpp support built in, background tasks can run entirely on-device using models like Gemma or Llama 3. My setup uses a local `gemma4-e2b-it-q4_0` model for cron jobs and sub-agent work. This keeps cloud API calls — and costs — minimal. The main conversation uses Claude; the background grunt work stays on-device.
 
-<img src="https://openclawhardware.dev/local-audio.png" alt="Local AI and voice capabilities on ClawBox">
+![Local AI and voice capabilities on ClawBox](/_images/2026-05-21-clawbox-local-audio.png)
 
 ### Browser Automation
 
