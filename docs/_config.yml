@@ -48,5 +48,9 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
 
+# Asset handling
+keep_files:
+  - _images
+
 # Exclude
 exclude: ['README.md']
