@@ -1,7 +1,7 @@
 # Site wide configuration
-title: Philip Van de Vyver - Azure Blog
-tagline: 'A blog with a focus on Microsoft Azure'
-description: 'A blog for Philip Van de Vyver with a focus on Microsoft Azure containing technical posts regarding everything that Microsoft Azure has to offer'
+title: Philip Van de Vyver - Cloud & AI
+tagline: 'A blog with a focus on Cloud & AI'
+description: 'A blog for Philip Van de Vyver with a focus on Cloud and AI containing technical posts regarding Microsoft Azure, AI tools, and modern infrastructure'
 url: https://blog.philipvandevyver.com
 author: Philip Van de Vyver
 date_format: '%B %d, %Y'
