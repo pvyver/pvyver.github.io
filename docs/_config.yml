@@ -44,6 +44,7 @@ redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data', 'footnotes']
 
 # Plugins
+plugins:
   - jekyll-paginate
   - jekyll-seo-tag
 
