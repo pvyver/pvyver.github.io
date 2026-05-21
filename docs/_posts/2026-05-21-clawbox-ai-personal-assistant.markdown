@@ -5,7 +5,7 @@ date: 2026-05-21
 logo: 'bars'
 comments: true
 description: A detailed look at ClawBox, the tiny AI computer I have on my desk, what we have done together so far, and the possibilities it unlocks.
-image: /_images/2026-05-21-clawbox-device.webp
+image: /_images/2026-05-21-clawbox-device.png
 ---
 
 - [Introduction](#introduction)
@@ -37,7 +37,7 @@ I have been looking for something different — an AI that actually lives in my 
 
 That search led me to **ClawBox**.
 
-![ClawBox device on a desk](/_images/2026-05-21-clawbox-device.webp)
+![ClawBox device on a desk](/_images/2026-05-21-clawbox-device.png)
 
 This post is my first account of what it is, how I set it up, and where things could go from here.
 
