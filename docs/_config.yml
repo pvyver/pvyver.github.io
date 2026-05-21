@@ -43,24 +43,9 @@ highlighter: rouge
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data', 'footnotes']
 
-# Enable when using kramdown (you will need to use ~~~ instead of ```)
-# kramdown:
-#   auto_ids: true
-#   footnote_nr: 1
-#   entity_output: as_char
-#   toc_levels: 1..6
-#   use_coderay: false
-
 # Plugins
-# https://github.com/jekyll/jekyll-paginate
-# https://github.com/jekyll/jekyll-seo-tag
-plugins:
   - jekyll-paginate
   - jekyll-seo-tag
 
 # Exclude
 exclude: ['README.md']
-
-include:
-  - "_images"
-  - "_docs"
