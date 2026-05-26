@@ -19,9 +19,27 @@ A **workload identity** is an identity you assign to a software workload (such a
 - **Service Principals**: The local representation, or application instance, of a global application object in a specific tenant
 - **Managed Identities**: Special service principals that eliminate the need for developers to manage credentials
 
-## The Identity Hierarchy
+## Understanding the Identity Hierarchy
 
-Unlike human identities that typically access a broad range of resources with a single identity, software workloads often deal with **multiple credentials** to access different resources. This complexity—combined with difficulties in tracking when identities are created or when they should be revoked—creates significant security challenges.
+Unlike human identities that typically access a broad range of resources with a single identity, software workloads often deal with **multiple credentials** to access different resources. Understanding how workload identities fit into the broader identity ecosystem is crucial.
+
+### Identity Types Overview
+
+![Workload Identities vs Human Identities and Device Identities](/images/workload-id-post/identity-types.svg)
+
+*Source: Microsoft Entra Workload ID - Official Documentation*
+
+The diagram above illustrates how workload identities (representing software workloads) fit alongside device identities to form **machine/non-human identities**, distinct from human identities (employees, external users, customers, etc.). This categorization is important for implementing proper security policies across your organization.
+
+## The Security Challenge
+
+The complexity of managing multiple credentials—combined with difficulties in tracking when identities are created or when they should be revoked—creates significant security challenges. Here are the key pain points organizations face:
+
+### Workload Identity Security Pain Points
+
+![Pain Points in Securing Workload Identities](/images/workload-id-post/pain-points.png)
+
+*Source: Microsoft Entra Workload ID - Official Documentation*
 
 **Key Pain Points in Workload Identity Security:**
 - 🔓 Multiple credentials stored and managed insecurely
@@ -29,6 +47,8 @@ Unlike human identities that typically access a broad range of resources with a 
 - 🎯 Difficulty tracking and auditing access patterns
 - ⚠️ Increased risk of credential compromise
 - 🚨 Limited ability to detect and respond to breaches
+
+These challenges highlight why traditional credential management approaches are inadequate for modern cloud security.
 
 ## Core Capabilities: Taking Control
 
@@ -64,6 +84,20 @@ Microsoft Entra Workload ID provides comprehensive control over workload identit
 - Identify unused or inactive workload identities
 - Detect high-risk identity configurations
 - Receive remediation guidelines automatically
+
+## Monitoring and Insights
+
+### Real-Time Intelligence Dashboard
+
+![Insights and Reporting Dashboard](/images/workload-id-post/insights-reporting.png)
+
+*Source: Microsoft Entra Workload ID FAQs - Official Documentation*
+
+The Insights and Reporting capabilities provide a comprehensive view of your workload identity ecosystem, enabling you to:
+- Monitor Conditional Access policies targeting workload identities
+- Track identity health and risk signals
+- Identify remediation opportunities
+- Maintain audit compliance with detailed reporting
 
 ## Licensing & Scalability
 
@@ -128,5 +162,6 @@ Workload Identities represent a fundamental shift in how organizations secure se
 **Learn More:**
 - [Microsoft Entra Workload ID Documentation](https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview)
 - [Workload Identity Federation Guide](https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation)
+- [Workload Identity FAQs](https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-faqs)
 - [Microsoft Entra Agent ID for AI Security](https://learn.microsoft.com/en-us/entra/agent-id/what-is-microsoft-entra-agent-id)
 - [Identity Protection for Workload Identities](https://learn.microsoft.com/en-us/entra/id-protection/concept-workload-identity-risk)
