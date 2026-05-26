@@ -6,7 +6,7 @@ categories: [Microsoft Entra, Identity Governance, Security]
 tags: [entra-id-governance, lifecycle-workflows, access-reviews, compliance, zero-trust]
 author: pvyver
 description: "A comprehensive guide to Microsoft Entra ID Governance covering identity lifecycle, access lifecycle, privileged access management, and agent identity governance with practical implementation strategies."
-image: "https://learn.microsoft.com/en-us/entra/id-governance/media/identity-governance-overview/identity-governance-overview.png"
+image: "/images/identity-lifecycle.png"
 excerpt: "Master Microsoft Entra ID Governance: automate identity lifecycle, implement continuous access reviews, enforce privileged access management, and govern AI agent identities at enterprise scale."
 ---
 
@@ -25,9 +25,21 @@ This guide explores the core pillars of Entra ID Governance and shows you how to
 
 Microsoft Entra ID Governance is built on a comprehensive framework addressing identity governance at enterprise scale. Here's the architectural overview:
 
-![Microsoft Entra ID Governance Framework - Four Pillars](/images/governance-pillars.svg)
+### Identity Lifecycle
 
-The framework addresses three critical lifecycle phases:
+The foundation of governance: automate provisioning and deprovisioning across the employee journey.
+
+![Identity Lifecycle](/images/identity-lifecycle.png)
+
+### Access Lifecycle
+
+Manage access throughout its lifecycle: from initial provisioning through continuous reviews to revocation.
+
+![Access Lifecycle](/images/access-lifecycle.png)
+
+---
+
+## Key Capabilities
 
 ### 1. Identity Lifecycle Governance
 
@@ -131,70 +143,11 @@ The framework addresses three critical lifecycle phases:
   - Approval workflows
   - Expiration notifications
 
-## Implementation Framework: The Three Lifecycle Phases
-
-**Lifecycle Workflows automate the complete employee journey:**
-
-![Lifecycle Workflows: Joiner → Mover → Leaver Automation](/images/lifecycle-workflows.svg)
-
-### Joiner Phase: Enabling Day-One Productivity
-
-When individuals enter your organization, they need immediate access to perform their roles.
-
-**Automated Tasks:**
-- Pre-employment background check verification
-- Equipment provisioning request submission
-- Manager notification with onboarding checklist
-- Automatic group membership assignment (based on department/role)
-- Application role assignment and license provisioning
-- Temporary access pass generation
-- Welcome email with resources and contacts
-
-**Business Impact:**
-- ✅ Reduces time-to-productivity from weeks to days
-- ✅ Eliminates manual provisioning errors
-- ✅ Ensures compliance from day one
-
-### Mover Phase: Managing Role Transitions
-
-When individuals change roles or departments, their access must be updated automatically.
-
-**Automated Tasks:**
-- Trigger custom workflows based on attribute changes
-- Remove old group memberships and application access
-- Add new access based on new role
-- Update manager information and delegation
-- Notify compliance/security teams of access changes
-- Generate audit trail for compliance
-
-**Business Impact:**
-- ✅ Prevents access creep and orphaned accounts
-- ✅ Maintains least-privilege principle
-- ✅ Ensures business continuity during transitions
-
-### Leaver Phase: Secure Offboarding
-
-When individuals leave the organization, immediate access revocation is critical.
-
-**Automated Tasks:**
-- Immediate account disable (optional: delay for transition period)
-- Remove all group memberships
-- Revoke application access and licensing
-- Notify IT, security, and management teams
-- Archive email and files
-- Update organizational charts
-- Generate exit audit report
-
-**Business Impact:**
-- ✅ Eliminates insider threat risk
-- ✅ Reduces compliance violations
-- ✅ Ensures data protection
-
-## Key Components in Action
-
-### Entitlement Management: Self-Service Access with Control
+## Entitlement Management: Self-Service Access with Control
 
 Entitlement Management provides business-friendly access request workflows while maintaining IT control.
+
+![Entitlement Management - Access Package Architecture](/images/entitlement-management.png)
 
 **How It Works:**
 ```
@@ -216,11 +169,11 @@ User Requests Access → Approval Workflow → Automatic Resource Assignment →
 - Transparent audit trail
 - Automatic compliance enforcement
 
-### Access Reviews: Continuous Compliance
+## Access Reviews: Continuous Compliance
 
-Access reviews provide the mechanism to verify that access remains appropriate over time. Here's the complete compliance cycle:
+Access reviews provide the mechanism to verify that access remains appropriate over time.
 
-![Access Reviews Compliance Cycle](/images/access-reviews-cycle.svg)
+![Access Reviews Planning & Flow](/images/access-review-planning.png)
 
 **Review Types:**
 - **Group reviews** — Who should still be in this security group?
@@ -242,9 +195,11 @@ Access reviews provide the mechanism to verify that access remains appropriate o
 
 **Measurement:** Organizations report 40-60% of reviewed access is either removed or modified, indicating significant access drift over time.
 
-### Lifecycle Workflows: Complete Automation
+## Lifecycle Workflows: Complete Automation
 
 Lifecycle workflows orchestrate multi-step processes triggered by lifecycle events.
+
+![Lifecycle Workflows Overview](/images/lifecycle-workflows.png)
 
 **Workflow Example: New Employee Onboarding**
 ```
@@ -340,6 +295,15 @@ Lifecycle workflows can integrate with Azure Logic Apps for advanced scenarios:
 - Configure risk-based policies
 - Integrate Logic Apps for advanced workflows
 - Leverage Copilot for workflow design
+
+## Key Metrics & Outcomes
+
+- **75%** reduction in onboarding time (Joiner automation)
+- **30-50%** reduction in unnecessary access through reviews
+- **40-60%** of reviewed access is removed or modified
+- **50%** reduction in security incidents from review findings
+- **100%** audit coverage with automated trails
+- **0** orphaned accounts (automatic deprovisioning)
 
 ## Getting Started
 
