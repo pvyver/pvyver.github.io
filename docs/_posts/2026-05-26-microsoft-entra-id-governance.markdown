@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Understanding Microsoft Entra ID Governance: A Complete Guide"
+title: "🔐 Understanding Microsoft Entra ID Governance: A Complete Guide"
 date: 2026-05-26 13:25:00 +0000
 categories: [Microsoft Entra, Identity Governance, Security]
 tags: [entra-id-governance, lifecycle-workflows, access-reviews, compliance, zero-trust]

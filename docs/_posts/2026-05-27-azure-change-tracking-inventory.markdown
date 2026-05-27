@@ -1,22 +1,22 @@
 ---
 layout: post
-title: "Azure Change Tracking and Inventory: Auditing, Monitoring, and Asset Visibility"
+title: "🔍 Azure Change Tracking and Inventory: Auditing, Monitoring, and Asset Visibility"
 date: 2026-05-27 12:56:00 +0000
 categories: azure monitoring
 ---
 
 This post explores Azure Change Tracking and Inventory, a powerful feature designed to provide deep auditing, configuration monitoring, and asset visibility across your servers, spanning Azure, on-premises, and other cloud environments.
 
-## <i class="fas fa-eye"></i> Overview: What is Change Tracking and Inventory?
+## Overview: What is Change Tracking and Inventory?
 
 Azure Change Tracking and Inventory is a comprehensive solution that keeps a detailed record of changes to your virtual machines and their configurations. Its primary goal is to ensure compliance, security, and maintain a complete inventory of all installed software and configuration data.
 
 **Core Capabilities:**
-* <i class="fas fa-search"></i> **Auditing:** Tracking file modifications and registry updates.
-* <i class="fas fa-box"></i> **Inventory:** Maintaining a full inventory of OS details and installed software.
-* <i class="fas fa-heartbeat"></i> **Monitoring:** Detecting changes in services and daemons.
+* **Auditing:** Tracking file modifications and registry updates.
+* **Inventory:** Maintaining a full inventory of OS details and installed software.
+* **Monitoring:** Detecting changes in services and daemons.
 
-## <i class="fas fa-cogs"></i> How It Works: Data Collection Architecture
+## ⚙️ How It Works: Data Collection Architecture
 
 The system operates by utilizing the **Azure Monitor Agent (AMA)** and **ChangeTracking VM Extensions**. These components work together to collect detailed change and inventory data through defined **Data Collection Rules**, storing all the resulting metadata into **Log Analytics workspaces**.
 
@@ -30,7 +30,7 @@ The architecture follows this pattern:
 ![Data Collection Process](/assets/images/cti/img-001.png)
 *Agents collect configuration and change data for centralized analysis*
 
-## <i class="fas fa-list-check"></i> Core Capabilities Breakdown
+## ✅ Core Capabilities Breakdown
 
 The feature offers granular insight into system health and configuration:
 
@@ -54,7 +54,7 @@ It maintains an accurate record of:
 * Configuration data for compliance checks
 * Service status and configurations
 
-## <i class="fas fa-rocket"></i> Deployment Methods
+## 🚀 Deployment Methods
 
 Change Tracking and Inventory can be enabled at different scales depending on your environment:
 
@@ -87,7 +87,7 @@ Fine-tune your tracking rules:
 * Define service/daemon tracking parameters
 * Set exclusion rules for temporary files
 
-## <i class="fas fa-database"></i> Data Storage and Log Analytics Integration
+## 💾 Data Storage and Log Analytics Integration
 
 All collected data flows into Log Analytics workspaces for analysis and reporting:
 
@@ -106,7 +106,7 @@ All collected data flows into Log Analytics workspaces for analysis and reportin
 * Registry key values
 * Service configurations
 
-## <i class="fas fa-chart-bar"></i> Reporting and Compliance
+## 📊 Reporting and Compliance
 
 Once data is in Log Analytics, you gain powerful querying and compliance capabilities:
 
@@ -119,7 +119,7 @@ Create dashboards and alerts for:
 * Configuration drift detection
 * Compliance gap reporting
 
-## <i class="fas fa-dollar-sign"></i> Cost Considerations
+## 💰 Cost Considerations
 
 Azure Change Tracking and Inventory generates data stored in your Log Analytics workspace. Costs depend on:
 
@@ -138,7 +138,7 @@ Azure Change Tracking and Inventory generates data stored in your Log Analytics 
 
 You can estimate costs using the [Azure Pricing Calculator](https://azure.microsoft.com/en-us/pricing/calculator/).
 
-## <i class="fas fa-tachometer-alt"></i> Performance Impact
+## ⚡ Performance Impact
 
 Change Tracking and Inventory is designed for minimal performance impact:
 
@@ -150,7 +150,7 @@ Change Tracking and Inventory is designed for minimal performance impact:
 * **Network Bandwidth:** Minimal (batched uploads every 5-15 minutes)
 * **Disk I/O:** Negligible (non-intrusive monitoring)
 
-## <i class="fas fa-shield-alt"></i> Security and Compliance
+## 🔒 Security and Compliance
 
 Change Tracking helps meet regulatory requirements:
 
@@ -164,7 +164,7 @@ Compliance mappings:
 * **SOX:** IT change management controls
 * **GDPR:** Data protection and access audit trails
 
-## <i class="fas fa-book"></i> Getting Started
+## 📚 Getting Started
 
 ### Prerequisites
 * Azure subscription (any tier)
@@ -194,7 +194,7 @@ Compliance mappings:
    - Create custom Log Analytics queries
    - Set up alerts and dashboards
 
-## <i class="fas fa-link"></i> Resources for Deeper Dive
+## 🔗 Resources for Deeper Dive
 
 For detailed implementation guides and configuration specifics, consult the official Microsoft Learn documentation:
 
@@ -211,17 +211,12 @@ For detailed implementation guides and configuration specifics, consult the offi
 Azure Change Tracking and Inventory is a critical tool for organizations that need to maintain compliance, ensure security posture, and have visibility into their infrastructure changes across hybrid and multi-cloud environments. By leveraging Azure Monitor Agent and Data Collection Rules, you can deploy this solution at scale with minimal overhead while gaining comprehensive audit trails and compliance reporting.
 
 **Key Takeaways:**
-* <i class="fas fa-check"></i> Real-time change tracking across all OS types
-* <i class="fas fa-check"></i> Scalable deployment with Azure Policy
-* <i class="fas fa-check"></i> Comprehensive compliance and audit capabilities
-* <i class="fas fa-check"></i> Minimal performance impact
-* <i class="fas fa-check"></i> Integration with Log Analytics for advanced querying
+* Real-time change tracking across all OS types
+* Scalable deployment with Azure Policy
+* Comprehensive compliance and audit capabilities
+* Minimal performance impact
+* Integration with Log Analytics for advanced querying
 
 ---
 
 *This post was enriched with visualizations extracted from Azure Change Tracking and Inventory research documentation.*
-
-**Need Font Awesome icons?** Add this to your Jekyll `_layouts/default.html` head section:
-```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-```
