@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "🔍 Azure Change Tracking and Inventory: Auditing, Monitoring, and Asset Visibility"
+title: "Azure Change Tracking and Inventory: Auditing, Monitoring, and Asset Visibility"
 date: 2026-05-27 12:56:00 +0000
 categories: azure monitoring
 logo: 'search'
