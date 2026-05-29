@@ -4,6 +4,7 @@ title: "🇪🇺 Digital Sovereignty: Europe and Belgium at a Turning Point"
 date: 2026-05-29 06:26:00 +0000
 categories: digital sovereignty europe belgium cloud
 tags: [digital-sovereignty, europe, belgium, cloud, GDPR, AI-Act, NIS2, GAIA-X, CLOUD-Act]
+comments: true
 logo: 'globe'
 ---
 
