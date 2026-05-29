@@ -38,11 +38,6 @@ The **2030 Digital Compass**, adopted in 2021, sets Europe's four cardinal targe
 - 🏭 **Business**: 75% of enterprises using cloud, AI, or big data
 - 🏛️ **Public services**: All key public services fully digitalised; universal eID
 
-The 2025 State of the Digital Decade report confirmed Europe is on track in some areas — but flagged **fragmented markets, regulatory complexity, and strategic independence** as the key challenges ahead.
-
-![State of the Digital Decade 2025 Factsheet](/assets/images/digital-sovereignty/dd-factsheet-page-1.png)
-*Source: European Commission — State of the Digital Decade 2025*
-
 ---
 
 ### The EU Regulatory Stack
@@ -90,45 +85,6 @@ Real-world adoption is accelerating:
 
 ---
 
-## 🇧🇪 Belgium's Position
-
-Belgium occupies a unique place in this debate: it hosts EU institutions, punches above its weight in public-sector digitalisation, yet has clear structural gaps.
-
-### Belgium's Digital Decade KPIs (2025)
-
-![Belgium Digital Decade KPIs 2025](/assets/images/digital-sovereignty/belgium-kpi-2025.png)
-*Source: European Commission — Belgium 2025 Digital Decade Country Report*
-
-**✅ Where Belgium leads:**
-- Public digital services: **82.3/100** for citizens, **91.6/100** for businesses (both above EU average)
-- Enterprise cloud adoption: **47.7%** (EU avg: 38.9%)
-- AI adoption: **13.8%** — nearly **double** the EU average of 8%
-- SME digital intensity: **74.5%** (EU avg: 57.7%)
-- Gigabit (VHCN) coverage: **96%** of households
-- Strong cybersecurity posture, including semiconductors and quantum computing
-
-**⚠️ Where Belgium must improve:**
-- FTTP (fibre to the premises): only **25%** of households (EU avg: ~64%)
-- ICT students: **3%** of population (EU avg: 4.5%)
-- Women in STEM: Belgium had the **lowest share** in the EU (27.4% vs 32.8% average)
-- Digital sovereignty awareness: 42% of citizens are concerned about control over their personal data
-
-Belgium's 2025 Digital Decade roadmap comprises **166 measures** with a total budget of **€913.71 million** (0.15% of GDP), backed by €1.2 billion from the Recovery and Resilience Plan.
-
----
-
-### Federal Strategy: G-Cloud and BOSA
-
-Belgium's federal digital transformation is led by **FPS BOSA** and anchored around **G-Cloud** — the federal government cloud platform. The **Federal Government Agreement 2025–2029** reinforces G-Cloud as the backbone for public services including MyGov, applying the "only once" principle to citizen data.
-
-Geopolitical disruptions have prompted Belgium's **Federal Taskforce Public Cloud** (including FPS Mobility and Transport) to revisit its cloud-first strategy — developing risk-based guidance that weighs sovereignty against cost and innovation.
-
-Belgian industry body **Beltug** summarises the dilemma clearly:
-
-> _"There is no silver bullet. More sovereignty often means higher cost and reduced functionality. The recommended approach is hybrid."_
-
----
-
 ## ⚠️ Key Challenges
 
 | Challenge | What it means |
@@ -141,7 +97,7 @@ Belgian industry body **Beltug** summarises the dilemma clearly:
 
 ---
 
-## 🏢 Organisational Impact in the Coming Years
+## 📋 Organisational Impact in the Coming Years
 
 For any organisation operating in Europe, digital sovereignty is reshaping five critical areas:
 
@@ -162,11 +118,58 @@ The EU needs 20 million ICT specialists by 2030. Belgium must address its gender
 
 ---
 
+---
+
+## 🏢 Microsoft's Sovereign Cloud Offering in Belgium
+
+Microsoft has repositioned its sovereignty offering not as a separate cloud, but as a **continuum of controls built into the existing platform** — allowing organisations to choose the right posture workload by workload. In Belgium and across the EU, this plays out across four layers:
+
+### 1. EU Data Boundary
+
+Microsoft's **EU Data Boundary** commits to storing and processing customer data for core commercial services (Azure, Microsoft 365, Dynamics 365, Power Platform) **within the EU and EFTA**. Belgian public-sector and enterprise customers benefit from data residency in EU data centres — including Microsoft's **Belgium North (Ghent)** region — without the need to move to a separate sovereign environment.
+
+> ⚠️ Important caveat: the EU Data Boundary addresses *where* data is stored, but does not repeal CLOUD Act jurisdiction. As Microsoft itself acknowledged at the April 2026 Digital Sovereignty Summit in Brussels, sovereignty is "a continuous risk management discipline rather than a fixed destination" — contractual and residency guarantees are necessary but not sufficient.
+
+### 2. Azure Local — Sovereign Private Cloud
+
+For workloads that require stricter control, **Azure Local** (formerly Azure Stack HCI) enables organisations to run Azure services **on-premises or in a partner-operated environment**, physically within Belgium. Key capabilities:
+
+- **Disconnected operations** — Azure Local can run critical infrastructure with full Azure governance and policy enforcement even with **no cloud connectivity**, supporting classified or isolated environments
+- **Partner-operated sovereign cloud** — in Belgium, partners like **Proximus NXT** operate sovereign Azure Local environments, providing physical isolation under Belgian jurisdiction while maintaining Azure management consistency
+- **GPU acceleration and large AI models** — Azure Local now supports large-scale deployments with GPU acceleration, enabling AI inferencing **fully within the customer's sovereign boundary**
+
+For regulated workloads (healthcare, justice, finance), Azure Local combined with Belgian-jurisdiction partner clouds meets the strictest local hosting requirements.
+
+### 3. Microsoft 365 Local — Sovereign Productivity
+
+**Microsoft 365 Local** brings core collaboration workloads — Exchange Server, SharePoint Server, Skype for Business Server — into the customer's sovereign private cloud on Azure Local. Teams remain productive and data stays within the organisation's controlled boundary, even when fully disconnected from the public cloud. Microsoft has committed support for these workloads **through at least 2035**.
+
+### 4. Foundry Local — Sovereign AI
+
+**Foundry Local** (part of Microsoft Azure AI Foundry) allows organisations to run **large, multimodal AI models** in fully disconnected sovereign environments. For Belgian organisations in sensitive sectors — defence, intelligence, regulated finance, or healthcare — this enables advanced AI capabilities without any data leaving the national or organisational boundary.
+
+### Microsoft's Sovereignty Posture: Strengths and Limits
+
+| Capability | What it delivers | Limitation |
+|-----------|-----------------|-----------|
+| EU Data Boundary | Data stored in EU; covers M365, Azure, Dynamics | Does not override CLOUD Act jurisdiction |
+| Customer-Managed Keys (CMK/BYOK) | Encryption keys held by customer; operationally inaccessible to Microsoft | Keys may still be subject to compelled disclosure if held by Belgian subsidiary of US company |
+| Azure Local (disconnected) | Full sovereignty, no cloud dependency, partner-operated in Belgium | Higher cost; requires trusted local partner |
+| Microsoft 365 Local | Sovereign productivity, supported to 2035 | On-premises management overhead |
+| Foundry Local | Large AI models in disconnected sovereign boundary | Infrastructure investment required |
+
+Microsoft's approach recognises that **sovereignty and innovation are not a tradeoff**. By offering a hybrid spectrum — from standard cloud with EU residency through to fully disconnected sovereign private cloud — Belgian organisations can apply the right level of control to each workload without fragmenting their architecture or sacrificing access to Microsoft's global security intelligence and AI capabilities.
+
+For most Belgian organisations, the practical answer is a **hybrid strategy**:
+- General business data → Microsoft 365 with EU Data Boundary and Customer Key encryption
+- Sensitive/regulated workloads → Azure Local via a Belgian sovereign cloud partner (e.g. Proximus NXT)
+- Critical classified workloads → Fully disconnected Azure Local + M365 Local + Foundry Local
+
+
 ## 📌 Conclusion
 
 Digital sovereignty is no longer a future scenario — it is an **active, enforced regulatory reality**. The EU Tech Sovereignty Package makes the distinction between contractually asserted and architecturally enforced sovereignty binding for public procurement, with gravitational pull across the private sector.
 
-For Belgium, the picture is one of real strength — public service digitalisation, enterprise AI adoption, and cybersecurity — combined with clear structural gaps in FTTP, digital skills, and gender balance in STEM.
 
 **The organisations that will thrive are those that treat sovereignty as a board-level design imperative, not a compliance checkbox.** The path is a deliberate hybrid strategy: enforcing sovereignty where it matters most, leveraging the best available technology where it doesn't, and building the architectural, contractual, and human capacity to *prove* sovereignty — not merely assert it.
 
