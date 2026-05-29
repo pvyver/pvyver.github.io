@@ -122,6 +122,9 @@ The EU needs 20 million ICT specialists by 2030. Belgium must address its gender
 
 ## 🏢 Microsoft's Sovereign Cloud Offering in Belgium
 
+![Microsoft Digital Sovereignty Summit Brussels 2026](/assets/images/digital-sovereignty/ms-sovereignty-summit-2026.jpg)
+*Microsoft convened policymakers, CIOs, and regulators in Brussels for its April 2026 Digital Sovereignty Summit. Source: [Microsoft Cloud Blog](https://www.microsoft.com/en-us/microsoft-cloud/blog/government/2026/04/02/5-takeaways-from-the-2026-microsoft-digital-sovereignty-summit/)*
+
 Microsoft has repositioned its sovereignty offering not as a separate cloud, but as a **continuum of controls built into the existing platform** — allowing organisations to choose the right posture workload by workload. In Belgium and across the EU, this plays out across four layers:
 
 ### 1. EU Data Boundary
@@ -131,6 +134,9 @@ Microsoft's **EU Data Boundary** commits to storing and processing customer data
 > ⚠️ Important caveat: the EU Data Boundary addresses *where* data is stored, but does not repeal CLOUD Act jurisdiction. As Microsoft itself acknowledged at the April 2026 Digital Sovereignty Summit in Brussels, sovereignty is "a continuous risk management discipline rather than a fixed destination" — contractual and residency guarantees are necessary but not sufficient.
 
 ### 2. Azure Local — Sovereign Private Cloud
+
+![Microsoft Sovereign Private Cloud — Azure Local, M365 Local, Foundry Local](/assets/images/digital-sovereignty/ms-sovereign-private-cloud.png)
+*Sovereign Private Cloud: unifying Azure Local, Microsoft 365 Local and Foundry Local across connected, intermittently connected, and fully disconnected environments. Source: [Microsoft Blog, Feb 2026](https://blogs.microsoft.com/blog/2026/02/24/microsoft-sovereign-cloud-adds-governance-productivity-and-support-for-large-ai-models-securely-running-even-when-completely-disconnected/)*
 
 For workloads that require stricter control, **Azure Local** (formerly Azure Stack HCI) enables organisations to run Azure services **on-premises or in a partner-operated environment**, physically within Belgium. Key capabilities:
 
@@ -149,6 +155,9 @@ For regulated workloads (healthcare, justice, finance), Azure Local combined wit
 **Foundry Local** (part of Microsoft Azure AI Foundry) allows organisations to run **large, multimodal AI models** in fully disconnected sovereign environments. For Belgian organisations in sensitive sectors — defence, intelligence, regulated finance, or healthcare — this enables advanced AI capabilities without any data leaving the national or organisational boundary.
 
 ### Microsoft's Sovereignty Posture: Strengths and Limits
+
+![Microsoft Digital Sovereignty Summit — Panel Discussion](/assets/images/digital-sovereignty/ms-sovereignty-summit-panel.jpg)
+*Panel discussion at the 2026 Microsoft Digital Sovereignty Summit, Brussels. Source: [Microsoft Industry Blog](https://www.microsoft.com/en-us/industry/blog/)*
 
 | Capability | What it delivers | Limitation |
 |-----------|-----------------|-----------|
