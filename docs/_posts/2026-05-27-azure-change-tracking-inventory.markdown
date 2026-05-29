@@ -3,6 +3,7 @@ layout: post
 title: "🔍 Azure Change Tracking and Inventory: Auditing, Monitoring, and Asset Visibility"
 date: 2026-05-27 12:56:00 +0000
 categories: azure monitoring
+logo: 'search'
 ---
 
 This post explores Azure Change Tracking and Inventory, a powerful feature designed to provide deep auditing, configuration monitoring, and asset visibility across your servers, spanning Azure, on-premises, and other cloud environments.

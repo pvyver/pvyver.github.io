@@ -8,6 +8,7 @@ author: pvyver
 description: "A comprehensive guide to Microsoft Entra ID Governance covering identity lifecycle, access lifecycle, privileged access management, and agent identity governance with practical implementation strategies."
 image: "/images/identity-lifecycle.png"
 excerpt: "Master Microsoft Entra ID Governance: automate identity lifecycle, implement continuous access reviews, enforce privileged access management, and govern AI agent identities at enterprise scale."
+logo: 'id-card'
 ---
 
 In today's hybrid work environment, organizations face unprecedented challenges in managing identity and access across cloud and on-premises resources. With users, partners, and contractors requiring different levels of access at different times, maintaining security while ensuring productivity is no longer optional—it's essential.

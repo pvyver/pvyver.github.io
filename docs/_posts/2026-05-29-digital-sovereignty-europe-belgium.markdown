@@ -4,6 +4,7 @@ title: "🇪🇺 Digital Sovereignty: Europe and Belgium at a Turning Point"
 date: 2026-05-29 06:26:00 +0000
 categories: digital sovereignty europe belgium cloud
 tags: [digital-sovereignty, europe, belgium, cloud, GDPR, AI-Act, NIS2, GAIA-X, CLOUD-Act]
+logo: 'globe'
 ---
 
 On **27 May 2026**, the European Commission formally presented its **Tech Sovereignty Package** — restrictions on US cloud providers for sensitive government data across all 27 EU member states. It marks the moment digital sovereignty stopped being a policy debate and became procurement law. This post analyses what that means for Europe, for Belgium, and for your organisation.
