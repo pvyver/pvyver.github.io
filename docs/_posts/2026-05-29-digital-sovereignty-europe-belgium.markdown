@@ -75,7 +75,7 @@ The Netherlands underscored this in May 2026 by **blocking IBM/Kyndryl's acquisi
 
 **GAIA-X**, launched in 2020 by Germany and France, defines policy rules, technical standards, and a trust framework for a federated European data infrastructure. It doesn't compete with hyperscalers — it defines sovereignty requirements they must meet to participate.
 
-![GAIA-X Logo](/assets/images/digital-sovereignty/gaia-x-logo.png)
+![GAIA-X Logo](/assets/images/digital-sovereignty/gaia-x-logo.svg)
 *Source: GAIA-X Association — [gaia-x.eu](https://gaia-x.eu)*
 
 Real-world adoption is accelerating:
