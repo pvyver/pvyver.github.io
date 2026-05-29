@@ -141,7 +141,7 @@ Microsoft's **EU Data Boundary** commits to storing and processing customer data
 For workloads that require stricter control, **Azure Local** (formerly Azure Stack HCI) enables organisations to run Azure services **on-premises or in a partner-operated environment**, physically within Belgium. Key capabilities:
 
 - **Disconnected operations** — Azure Local can run critical infrastructure with full Azure governance and policy enforcement even with **no cloud connectivity**, supporting classified or isolated environments
-- **Partner-operated sovereign cloud** — in Belgium, partners like **Proximus NXT** operate sovereign Azure Local environments, providing physical isolation under Belgian jurisdiction while maintaining Azure management consistency
+- **Partner-operated sovereign cloud** — in Belgium, certified partners operate sovereign Azure Local environments, providing physical isolation under Belgian jurisdiction while maintaining Azure management consistency
 - **GPU acceleration and large AI models** — Azure Local now supports large-scale deployments with GPU acceleration, enabling AI inferencing **fully within the customer's sovereign boundary**
 
 For regulated workloads (healthcare, justice, finance), Azure Local combined with Belgian-jurisdiction partner clouds meets the strictest local hosting requirements.
@@ -171,7 +171,7 @@ Microsoft's approach recognises that **sovereignty and innovation are not a trad
 
 For most Belgian organisations, the practical answer is a **hybrid strategy**:
 - General business data → Microsoft 365 with EU Data Boundary and Customer Key encryption
-- Sensitive/regulated workloads → Azure Local via a Belgian sovereign cloud partner (e.g. Proximus NXT)
+- Sensitive/regulated workloads → Azure Local via a certified Belgian sovereign cloud partner
 - Critical classified workloads → Fully disconnected Azure Local + M365 Local + Foundry Local
 
 
@@ -179,7 +179,7 @@ For most Belgian organisations, the practical answer is a **hybrid strategy**:
 
 The EU's Tech Sovereignty Package is not the beginning of this story — it is the point where years of court rulings, geopolitical wake-up calls, and regulatory evolution converged into enforceable law. The CLOUD Act problem that Schrems II exposed in 2020 is now a procurement criterion. The architectural sovereignty that security teams have been quietly arguing for is now a public-sector standard. And the gravity of those standards is already pulling the private sector in the same direction.
 
-The key insight running through this entire analysis is deceptively simple: **contracts cannot fix a legal jurisdiction problem — only architecture can**. Whether that means encrypting data with customer-managed keys in Azure, running workloads on Azure Local behind a Belgian sovereign cloud partner like Proximus NXT, or deploying Foundry Local AI models in a fully disconnected environment — the answer is always structural, never contractual.
+The key insight running through this entire analysis is deceptively simple: **contracts cannot fix a legal jurisdiction problem — only architecture can**. Whether that means encrypting data with customer-managed keys in Azure, running workloads on Azure Local behind a certified Belgian sovereign cloud partner, or deploying Foundry Local AI models in a fully disconnected environment — the answer is always structural, never contractual.
 
 Microsoft's response is instructive precisely because it is pragmatic rather than ideological. Rather than building a separate "sovereign cloud" silo, Microsoft has embedded a **continuum of sovereignty controls** into its existing platform — allowing organisations to calibrate posture workload by workload. EU Data Boundary for general business data; Azure Local for regulated or sensitive workloads; fully disconnected Sovereign Private Cloud for classified or mission-critical environments. That spectrum mirrors what every Belgian and European organisation actually needs: not a binary choice between hyperscaler convenience and total isolation, but a **risk-proportionate hybrid architecture** with clear governance at every tier.
 
