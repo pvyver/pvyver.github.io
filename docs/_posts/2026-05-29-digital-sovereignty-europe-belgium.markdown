@@ -177,10 +177,21 @@ For most Belgian organisations, the practical answer is a **hybrid strategy**:
 
 ## 📌 Conclusion
 
-Digital sovereignty is no longer a future scenario — it is an **active, enforced regulatory reality**. The EU Tech Sovereignty Package makes the distinction between contractually asserted and architecturally enforced sovereignty binding for public procurement, with gravitational pull across the private sector.
+The EU's Tech Sovereignty Package is not the beginning of this story — it is the point where years of court rulings, geopolitical wake-up calls, and regulatory evolution converged into enforceable law. The CLOUD Act problem that Schrems II exposed in 2020 is now a procurement criterion. The architectural sovereignty that security teams have been quietly arguing for is now a public-sector standard. And the gravity of those standards is already pulling the private sector in the same direction.
 
+The key insight running through this entire analysis is deceptively simple: **contracts cannot fix a legal jurisdiction problem — only architecture can**. Whether that means encrypting data with customer-managed keys in Azure, running workloads on Azure Local behind a Belgian sovereign cloud partner like Proximus NXT, or deploying Foundry Local AI models in a fully disconnected environment — the answer is always structural, never contractual.
 
-**The organisations that will thrive are those that treat sovereignty as a board-level design imperative, not a compliance checkbox.** The path is a deliberate hybrid strategy: enforcing sovereignty where it matters most, leveraging the best available technology where it doesn't, and building the architectural, contractual, and human capacity to *prove* sovereignty — not merely assert it.
+Microsoft's response is instructive precisely because it is pragmatic rather than ideological. Rather than building a separate "sovereign cloud" silo, Microsoft has embedded a **continuum of sovereignty controls** into its existing platform — allowing organisations to calibrate posture workload by workload. EU Data Boundary for general business data; Azure Local for regulated or sensitive workloads; fully disconnected Sovereign Private Cloud for classified or mission-critical environments. That spectrum mirrors what every Belgian and European organisation actually needs: not a binary choice between hyperscaler convenience and total isolation, but a **risk-proportionate hybrid architecture** with clear governance at every tier.
+
+For organisations, three priorities follow directly from this analysis:
+
+1. **Classify before you procure.** Know which workloads carry legal, regulatory, or strategic sovereignty requirements before making cloud decisions. The Tech Sovereignty Package has drawn the line for public-sector data in healthcare, finance, and justice — but every organisation has its own equivalent sensitivities.
+
+2. **Make sovereignty provable, not just assertable.** Regulators, auditors, and procurement officers will increasingly demand evidence — audit logs, key management records, architecture diagrams showing data flows — not SLA clauses. Build the evidence layer into your design from day one.
+
+3. **Treat compliance as a floor, not a ceiling.** The organisations that gain competitive advantage from digital sovereignty will be those that go beyond minimum compliance: using it to build customer trust, win regulated-sector contracts, and future-proof their architecture against a regulatory landscape that will only tighten through 2030 and beyond.
+
+Digital sovereignty is no longer a future scenario. It is today's procurement law, tomorrow's board risk agenda, and the decade's defining infrastructure challenge. The organisations that act now — with deliberate architecture, not reactive compliance — will be the ones still standing when the next wave of enforcement arrives.
 
 ---
 
