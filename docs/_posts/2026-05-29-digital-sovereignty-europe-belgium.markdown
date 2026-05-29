@@ -207,3 +207,7 @@ Digital sovereignty is no longer a future scenario. It is today's procurement la
 - [EU Tech Sovereignty Package Debuts — TechTimes (May 27, 2026)](https://www.techtimes.com/articles/317285/20260527/eu-tech-sovereignty-package-debuts-cisas-own-cloud-keys-sat-exposed-months.htm)
 - [Digital Sovereignty: Why Tech Execs Must Act Now — Forrester (2025)](https://www.forrester.com/blogs/digital-sovereignty-why-tech-execs-must-act-now/)
 - [The Sovereignty Question Most Organisations Ask Too Late — SoftwareOne (Apr 2026)](https://www.softwareone.com/en/blog/articles/2026/04/14/the-sovereignty-question-most-organizations-ask-too-late)
+- [Microsoft Sovereign Cloud — Overview](https://www.microsoft.com/en-us/sovereignty)
+- [5 Takeaways from the 2026 Microsoft Digital Sovereignty Summit — Microsoft Cloud Blog](https://www.microsoft.com/en-us/microsoft-cloud/blog/government/2026/04/02/5-takeaways-from-the-2026-microsoft-digital-sovereignty-summit/)
+- [Microsoft Sovereign Cloud: Governance, Productivity & Large AI Models in Disconnected Environments — Microsoft Blog (Feb 2026)](https://blogs.microsoft.com/blog/2026/02/24/microsoft-sovereign-cloud-adds-governance-productivity-and-support-for-large-ai-models-securely-running-even-when-completely-disconnected/)
+- [Microsoft Cloud Sovereignty in 2026 — Databalance](https://www.databalance.eu/en/microsoft-cloud-sovereignty-2026/)
